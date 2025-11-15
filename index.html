@@ -297,6 +297,46 @@
             .question-card {
                 padding: 12px;
             }
+            
+            /* 모바일 영상 컨테이너 조정 */
+            .video-reference-section h4 {
+                font-size: 1.1em !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .video-container {
+                border-radius: 6px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+            }
+            
+            .video-reference-section p {
+                font-size: 0.8em !important;
+                margin-top: 8px !important;
+            }
+        }
+        
+        /* 동영상 컨테이너 반응형 스타일 추가 */
+        @media (max-width: 768px) {
+            .video-reference-section {
+                margin-top: 20px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .video-reference-section h4 {
+                font-size: 1.2em !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .video-container {
+                border-radius: 6px !important;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+            }
+            
+            .video-reference-section p {
+                font-size: 0.85em !important;
+                margin-top: 8px !important;
+                line-height: 1.4 !important;
+            }
         }
         .tab-content {
             display: none;
@@ -897,6 +937,25 @@
                         </div>
                         <div class="answer-content">
                             <p>최근 구글에서 발표한 '프로젝트 아스트라(Project Astra)'의 시연 영상이 매우 인상 깊었습니다. 단순히 질문에 답하는 것을 넘어, 스마트폰 카메라를 통해 실시간으로 주변 환경을 보고, 듣고, 기억하며 사용자와 자연스럽게 대화하는 모습이 제가 상상하던 미래의 AI 비서와 가장 가까웠기 때문입니다. 스피커의 부품이 무엇인지 알려주거나, 책상 위에 놓인 물건들을 이용해 즉석에서 이야기를 만들어내는 등, AI가 단순히 정보를 검색하는 도구가 아니라 인간과 소통하고 창의적인 활동을 함께하는 '파트너'가 될 수 있다는 가능성을 보여주었습니다. 이 기술을 보며, 저 또한 사람들의 일상에 자연스럽게 녹아들어 도움을 주는 인간 중심적인 AI를 개발하고 싶다는 꿈을 더욱 확고히 하게 되었습니다.</p>
+                        </div>
+                        
+                        <!-- 참고 영상 섹션 -->
+                        <div class="video-reference-section" style="margin-top: 30px; margin-bottom: 20px;">
+                            <h4 style="color: #003366; margin-bottom: 15px; font-size: 1.3em; border-left: 4px solid #4a90e2; padding-left: 10px;">
+                                🎥 참고 영상
+                            </h4>
+                            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/AmQB6U4hSEU" 
+                                    title="Project Astra 시연 영상" 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px;"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <p style="margin-top: 10px; font-size: 0.9em; color: #666; text-align: center; font-style: italic;">
+                                구글 프로젝트 아스트라(Project Astra) 공식 시연 영상 - 실시간 멀티모달 AI의 미래
+                            </p>
                         </div>
                     </div>
                 </div>
