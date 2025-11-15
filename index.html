@@ -43,9 +43,12 @@
             border-bottom: 2px solid #dee2e6;
             margin-bottom: 25px;
             flex-wrap: wrap;
+            gap: 2px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .tab-button {
-            padding: 10px 15px;
+            padding: 12px 20px;
             cursor: pointer;
             background-color: transparent;
             border: none;
@@ -54,11 +57,246 @@
             color: #495057;
             transition: color 0.3s, border-bottom 0.3s;
             border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: fit-content;
         }
         .tab-button.active {
             color: #003366;
             font-weight: 700;
             border-bottom: 3px solid #4a90e2;
+        }
+        
+        /* 모바일 반응형 디자인 */
+        /* 답변 흐름 키워드 스타일 */
+        .answer-flow {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .answer-flow h5 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .flow-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .flow-keyword {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .flow-arrow {
+            font-size: 1.2em;
+            margin: 0 5px;
+            opacity: 0.8;
+        }
+        
+        /* 모범 답안 접기/펼치기 스타일 */
+        .answer-toggle {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-header {
+            padding: 12px 20px;
+            background-color: #bbdefb;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1565c0;
+            user-select: none;
+        }
+        
+        .answer-header:hover {
+            background-color: #90caf9;
+        }
+        
+        .answer-content {
+            padding: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .answer-content.show {
+            display: block;
+        }
+        
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        
+        .answer-toggle.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            
+            .tab-menu {
+                border-bottom: 1px solid #dee2e6;
+                margin-bottom: 20px;
+                padding-bottom: 5px;
+                gap: 0;
+            }
+            
+            .tab-button {
+                padding: 10px 16px;
+                font-size: 0.9em;
+                border-bottom: 2px solid transparent;
+                border-radius: 6px 6px 0 0;
+                background-color: #f8f9fa;
+                margin-right: 2px;
+                margin-bottom: 5px;
+            }
+            
+            .tab-button.active {
+                background-color: #ffffff;
+                border-bottom: 2px solid #4a90e2;
+                box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .section {
+                padding: 15px 10px;
+                margin-bottom: 25px;
+            }
+            
+            .question-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .question-card h4 {
+                font-size: 1.1em;
+            }
+            
+            .model-answer {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            
+            .follow-up {
+                margin-left: 15px;
+                padding-left: 10px;
+                font-size: 0.9em;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+            
+            .tag {
+                font-size: 0.75em;
+                padding: 2px 8px;
+            }
+            
+            .answer-flow {
+                padding: 12px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .answer-flow h5 {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+            
+            .flow-keyword {
+                font-size: 0.8em;
+                padding: 5px 10px;
+            }
+            
+            .answer-header {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            
+            .answer-content {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tab-button {
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            .container {
+                padding: 15px 10px;
+            }
+            
+            .section {
+                padding: 10px 8px;
+            }
+            
+            .question-card {
+                padding: 12px;
+            }
         }
         .tab-content {
             display: none;
@@ -159,6 +397,7 @@
             <button class="tab-button" onclick="openTab(event, 'tab-record')">생기부 기반 질문</button>
             <button class="tab-button" onclick="openTab(event, 'tab-major')">AI 전공 질문</button>
             <button class="tab-button" onclick="openTab(event, 'tab-final')">최종 준비</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-star')">STAR 대응법</button>
         </div>
 
         <div id="tab-dept-info" class="tab-content active">
@@ -257,23 +496,70 @@
                 
                 <div class="question-card">
                     <h4>학과 인재상 맞춤 질문</h4>
+                    
                     <p class="question">
                         <span class="tag">전공적합성</span><span class="tag">발전가능성</span>
                         우리 인공지능공학부는 '프로젝트 기반 학습(PBL)'을 통해 산업 현장의 문제 해결 능력을 함양하는 것을 중요하게 생각합니다. 지원자의 생활기록부를 보면 자율주행, 스마트 분리수거 등 다양한 프로젝트 경험이 있는데, 그중 가장 기억에 남는 프로젝트는 무엇이며, 그 경험이 우리 학부의 인재상과 어떻게 부합한다고 생각하나요?
                     </p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, 저는 3학년 때 진행했던 '자율주행차의 PID 제어 파라미터 최적화' 프로젝트가 가장 기억에 남습니다. 처음에는 제어공학 이론을 적용하면 쉽게 해결될 것이라 생각했지만, 시뮬레이션 과정에서 계속된 오버슈팅 문제에 부딪혔습니다. 이 문제를 해결하기 위해 팀원들과 함께 손실 함수를 직접 설계하고, 경사 하강법을 적용하여 파라미터를 최적화하는 과정을 거쳤습니다. </p>
-                        <p>이 경험을 통해 이론 학습만으로는 알 수 없는 실제 문제의 복잡성과, 이를 해결하기 위한 창의적인 접근법의 중요성을 깨달았습니다. 이는 숙명여대 인공지능공학부가 추구하는 '프로젝트 기반 학습'의 가치와 정확히 일치한다고 생각합니다. 저는 고교 시절의 작은 성공과 실패 경험을 바탕으로, 입학 후 학부의 체계적인 PBL 커리큘럼 안에서 더 큰 산업적 문제를 해결하는 전문가로 성장하고 싶습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">프로젝트 선택</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">문제 발견</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">해결 과정</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">배운 점</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">학부 연계</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, 저는 3학년 때 진행했던 '자율주행차의 PID 제어 파라미터 최적화' 프로젝트가 가장 기억에 남습니다. 처음에는 제어공학 이론을 적용하면 쉽게 해결될 것이라 생각했지만, 시뮬레이션 과정에서 계속된 오버슈팅 문제에 부딪혔습니다. 이 문제를 해결하기 위해 팀원들과 함께 손실 함수를 직접 설계하고, 경사 하강법을 적용하여 파라미터를 최적화하는 과정을 거쳤습니다.</p>
+                            <p>이 경험을 통해 이론 학습만으로는 알 수 없는 실제 문제의 복잡성과, 이를 해결하기 위한 창의적인 접근법의 중요성을 깨달았습니다. 이는 숙명여대 인공지능공학부가 추구하는 '프로젝트 기반 학습'의 가치와 정확히 일치한다고 생각합니다. 저는 고교 시절의 작은 성공과 실패 경험을 바탕으로, 입학 후 학부의 체계적인 PBL 커리큘럼 안에서 더 큰 산업적 문제를 해결하는 전문가로 성장하고 싶습니다.</p>
+                        </div>
                     </div>
                     <div class="follow-up">
                         <p class="question">
                             <strong>(추가 질문)</strong> 우리 학부는 '인공지능 모델링 및 융합 분야'의 인재 양성을 목표로 합니다. 지원자는 AI 기술을 보안, 환경 등 다양한 분야와 연결하는 탐구 활동을 많이 했습니다. 본인이 생각하는 'AI 융합'이란 무엇이며, 앞으로 어떤 분야와 AI를 융합하여 새로운 가치를 만들고 싶은가요?
                         </p>
-                         <div class="model-answer">
-                            <strong>모범 답안:</strong>
-                            <p>제가 생각하는 'AI 융합'은 단순히 다른 분야에 AI 기술을 적용하는 것을 넘어, 해당 분야의 도메인 지식을 깊이 이해하고 AI와 결합하여 기존에 없던 새로운 가치를 창출하는 시너지 효과라고 생각합니다. 예를 들어, 단순히 병원 기록을 전산화하는 것은 IT 기술의 활용이지만, 그 기록(데이터)을 AI로 분석하여 질병을 예측하는 것은 진정한 의미의 융합입니다.</p>
-                            <p>저는 고등학교 때 화학과 AI를 융합하여 전해질을 분류하는 탐구를 진행하며 융합 연구의 가능성을 보았습니다. 대학에 진학해서는 특히 'AI 신약 개발' 분야에 도전하고 싶습니다. 화학Ⅱ 시간에 배운 분자 구조와 반응에 대한 지식을 바탕으로, 수많은 화합물 중에서 신약 후보 물질을 빠르고 정확하게 예측하는 AI 모델을 개발하는 연구를 통해 인류의 건강에 기여하고 싶습니다.</p>
+                        
+                        <!-- 추가질문 답변 흐름 키워드 -->
+                        <div class="answer-flow">
+                            <h5>🎯 답변 흐름 키워드</h5>
+                            <div class="flow-keywords">
+                                <span class="flow-keyword">AI 융합 정의</span>
+                                <span class="flow-arrow">→</span>
+                                <span class="flow-keyword">도메인 지식</span>
+                                <span class="flow-arrow">→</span>
+                                <span class="flow-keyword">시너지 효과</span>
+                                <span class="flow-arrow">→</span>
+                                <span class="flow-keyword">구체적 예시</span>
+                                <span class="flow-arrow">→</span>
+                                <span class="flow-keyword">미래 계획</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 모범 답안 접기/펼치기 -->
+                        <div class="answer-toggle" onclick="toggleAnswer(this)">
+                            <div class="answer-header">
+                                <span>📝 모범 답안 보기</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="answer-content">
+                                <p>제가 생각하는 'AI 융합'은 단순히 다른 분야에 AI 기술을 적용하는 것을 넘어, 해당 분야의 도메인 지식을 깊이 이해하고 AI와 결합하여 기존에 없던 새로운 가치를 창출하는 시너지 효과라고 생각합니다. 예를 들어, 단순히 병원 기록을 전산화하는 것은 IT 기술의 활용이지만, 그 기록(데이터)을 AI로 분석하여 질병을 예측하는 것은 진정한 의미의 융합입니다.</p>
+                                <p>저는 고등학교 때 화학과 AI를 융합하여 전해질을 분류하는 탐구를 진행하며 융합 연구의 가능성을 보았습니다. 대학에 진학해서는 특히 'AI 신약 개발' 분야에 도전하고 싶습니다. 화학Ⅱ 시간에 배운 분자 구조와 반응에 대한 지식을 바탕으로, 수많은 화합물 중에서 신약 후보 물질을 빠르고 정확하게 예측하는 AI 모델을 개발하는 연구를 통해 인류의 건강에 기여하고 싶습니다.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,41 +573,111 @@
                 
                 <div class="question-card">
                     <h4>1. 자율주행 알고리즘 설계 (3학년)</h4>
+                    
                     <p class="question">
                         <span class="tag">진로역량</span><span class="tag">논리적 사고력</span>
                         3학년 때 진행한 자율주행차의 PID 제어 파라미터 최적화 프로젝트에 대해 설명해주세요. 특히 손실 함수를 직접 정의한 과정이 인상 깊은데, 왜 Min-Max 정규화와 지수 함수를 적용했나요?
                     </p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, 해당 프로젝트는 P제어만 사용했을 때 발생하는 오버슈팅, 즉 차량의 진동 현상을 해결하기 위해 시작되었습니다. 안정적인 차선 유지를 위해서는 PID 제어의 세 파라미터(비례, 적분, 미분)를 최적화하는 것이 중요하다고 생각했습니다.</p>
-                        <p>손실 함수를 설계할 때, 단순히 목표 지점과의 오차만 반영하면 안정적인 제어가 어렵다고 판단했습니다. 그래서 제어 시스템의 동적 특성인 '과도 응답'과 '정상 상태'를 모두 고려했습니다. 하지만 각 특성을 나타내는 손실 값들의 스케일이 달라, 이를 그대로 합산하면 특정 손실 값에만 최적화가 치우칠 수 있었습니다. 이 문제를 해결하기 위해 <strong>Min-Max 정규화</strong>를 사용하여 모든 손실 값을 0과 1 사이로 표준화했습니다.</p>
-                        <p>또한, <strong>지수 함수</strong>를 적용한 이유는 오차가 클 때 더 큰 패널티를 부여하기 위함이었습니다. 이를 통해 모델이 초기에 큰 오차를 빠르게 줄여나가도록 유도했고, 결과적으로 더 신속하고 안정적으로 최적의 파라미터에 수렴할 수 있었습니다. 이 과정을 통해 수학적 도구를 공학 문제 해결에 전략적으로 적용하는 경험을 할 수 있었습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">문제 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">접근 방식</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">손실 함수 설계</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">수학적 도구</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">결과 및 배움</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, 해당 프로젝트는 P제어만 사용했을 때 발생하는 오버슈팅, 즉 차량의 진동 현상을 해결하기 위해 시작되었습니다. 안정적인 차선 유지를 위해서는 PID 제어의 세 파라미터(비례, 적분, 미분)를 최적화하는 것이 중요하다고 생각했습니다.</p>
+                            <p>손실 함수를 설계할 때, 단순히 목표 지점과의 오차만 반영하면 안정적인 제어가 어렵다고 판단했습니다. 그래서 제어 시스템의 동적 특성인 '과도 응답'과 '정상 상태'를 모두 고려했습니다. 하지만 각 특성을 나타내는 손실 값들의 스케일이 달라, 이를 그대로 합산하면 특정 손실 값에만 최적화가 치우칠 수 있었습니다. 이 문제를 해결하기 위해 <strong>Min-Max 정규화</strong>를 사용하여 모든 손실 값을 0과 1 사이로 표준화했습니다.</p>
+                            <p>또한, <strong>지수 함수</strong>를 적용한 이유는 오차가 클 때 더 큰 패널티를 부여하기 위함이었습니다. 이를 통해 모델이 초기에 큰 오차를 빠르게 줄여나가도록 유도했고, 결과적으로 더 신속하고 안정적으로 최적의 파라미터에 수렴할 수 있었습니다. 이 과정을 통해 수학적 도구를 공학 문제 해결에 전략적으로 적용하는 경험을 할 수 있었습니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="question-card">
                     <h4>2. AI 기반 스마트 분리수거 프로그램 (3학년)</h4>
+                    
                     <p class="question">
                         <span class="tag">진로역량</span><span class="tag">창의성</span>
                         'AI 기반 스마트 분리수거 분류 프로그램'을 개발한 경험에 대해 말해주세요. 티처블 머신을 사용했다고 했는데, 데이터 수집과 모델 학습 과정에서 겪었던 어려움은 무엇이고 어떻게 해결했나요?
                     </p>
-                     <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, 환경 문제에 기술적으로 기여하고 싶다는 생각에 AI 분리수거 프로그램을 개발했습니다. 티처블 머신을 사용해 초기 모델을 만들었는데, 가장 큰 어려움은 '데이터의 다양성 부족'이었습니다. 제가 수집한 데이터는 대부분 깨끗하고 정면에서 촬영된 쓰레기 이미지였습니다. 이로 인해 실제 생활에서 흔히 볼 수 있는, 구겨지거나 오염되거나 다른 각도에서 보이는 쓰레기는 잘 인식하지 못하는 '과적합' 현상이 발생했습니다.</p>
-                        <p>이 문제를 해결하기 위해 두 가지 방법을 사용했습니다. 첫째, 의도적으로 다양한 상태의 쓰레기 이미지를 추가로 수집했습니다. 둘째, '데이터 증강(Data Augmentation)' 기법을 적극적으로 활용했습니다. 기존 이미지를 좌우로 뒤집거나, 임의로 회전시키고, 밝기를 조절하는 등의 처리를 통해 한정된 데이터로도 모델이 다양한 상황에 대응할 수 있도록 학습 데이터의 양과 다양성을 늘렸습니다. 이 과정을 통해 AI 모델의 성능은 데이터의 양뿐만 아니라 '질'과 '다양성'에 의해 크게 좌우된다는 것을 체감할 수 있었습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">프로젝트 동기</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">어려움 발견</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">해결 방안</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">기법 적용</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">성능 향상</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, 환경 문제에 기술적으로 기여하고 싶다는 생각에 AI 분리수거 프로그램을 개발했습니다. 티처블 머신을 사용해 초기 모델을 만들었는데, 가장 큰 어려움은 '데이터의 다양성 부족'이었습니다. 제가 수집한 데이터는 대부분 깨끗하고 정면에서 촬영된 쓰레기 이미지였습니다. 이로 인해 실제 생활에서 흔히 볼 수 있는, 구겨지거나 오염되거나 다른 각도에서 보이는 쓰레기는 잘 인식하지 못하는 '과적합' 현상이 발생했습니다.</p>
+                            <p>이 문제를 해결하기 위해 두 가지 방법을 사용했습니다. 첫째, 의도적으로 다양한 상태의 쓰레기 이미지를 추가로 수집했습니다. 둘째, '데이터 증강(Data Augmentation)' 기법을 적극적으로 활용했습니다. 기존 이미지를 좌우로 뒤집거나, 임의로 회전시키고, 밝기를 조절하는 등의 처리를 통해 한정된 데이터로도 모델이 다양한 상황에 대응할 수 있도록 학습 데이터의 양과 다양성을 늘렸습니다. 이 과정을 통해 AI 모델의 성능은 데이터의 양뿐만 아니라 '질'과 '다양성'에 의해 크게 좌우된다는 것을 체감할 수 있었습니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="question-card">
                     <h4>3. AI와 윤리/사회 문제에 대한 고찰</h4>
+                    
                     <p class="question">
                         <span class="tag">가치관</span><span class="tag">비판적 사고</span>
                         '대량살상 수학무기'를 읽고 AI가 양극화를 심화시킬 수 있다고 우려했고, '해킹 윤리'를 읽으며 윤리적 해커의 역할을 탐구했습니다. 본인이 생각하는 '바람직한 AI 개발자'의 모습은 무엇이며, 기술이 사회에 미칠 부정적 영향을 최소화하기 위해 개발자는 어떤 노력을 해야 할까요?
                     </p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>제가 생각하는 '바람직한 AI 개발자'는 단순히 코드를 잘 짜는 기술자를 넘어, 자신의 기술이 사회에 미칠 영향을 깊이 성찰하고 사회적 책임을 다하는 'AI 윤리 설계자'라고 생각합니다.</p>
-                        <p>이를 위해 개발자는 세 가지 노력을 해야 한다고 생각합니다. 첫째, '데이터 편향성'을 항상 경계해야 합니다. AI 모델은 데이터에 담긴 편견까지 학습하기 때문에, 데이터 수집 단계부터 다양성과 공정성을 확보하려는 노력이 필수적입니다. 둘째, '알고리즘의 투명성'을 높여야 합니다. AI의 판단 과정을 사용자가 이해할 수 있도록 돕는 XAI(설명가능 AI) 기술을 적극적으로 도입하여 '블랙박스' 문제를 해결해야 합니다. 셋째, '기술의 오용 가능성'을 예측하고 예방해야 합니다. 자신이 개발한 기술이 악용될 가능성을 미리 생각해보고, 이를 방지할 수 있는 안전장치를 설계 단계부터 고민하는 비판적 자세가 필요합니다. 결국 기술의 발전 방향을 결정하는 것은 사람이므로, 올바른 가치관을 가진 개발자의 역할이 무엇보다 중요하다고 생각합니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">가치관 정립</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">책임 인식</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">3가지 노력</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">미래 다짐</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>제가 생각하는 '바람직한 AI 개발자'는 단순히 코드를 잘 짜는 기술자를 넘어, 자신의 기술이 사회에 미칠 영향을 깊이 성찰하고 사회적 책임을 다하는 'AI 윤리 설계자'라고 생각합니다.</p>
+                            <p>이를 위해 개발자는 세 가지 노력을 해야 한다고 생각합니다. 첫째, '데이터 편향성'을 항상 경계해야 합니다. AI 모델은 데이터에 담긴 편견까지 학습하기 때문에, 데이터 수집 단계부터 다양성과 공정성을 확보하려는 노력이 필수적입니다. 둘째, '알고리즘의 투명성'을 높여야 합니다. AI의 판단 과정을 사용자가 이해할 수 있도록 돕는 XAI(설명가능 AI) 기술을 적극적으로 도입하여 '블랙박스' 문제를 해결해야 합니다. 셋째, '기술의 오용 가능성'을 예측하고 예방해야 합니다. 자신이 개발한 기술이 악용될 가능성을 미리 생각해보고, 이를 방지할 수 있는 안전장치를 설계 단계부터 고민하는 비판적 자세가 필요합니다. 결국 기술의 발전 방향을 결정하는 것은 사람이므로, 올바른 가치관을 가진 개발자의 역할이 무엇보다 중요하다고 생각합니다.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -331,10 +687,33 @@
                         <span class="tag">진로역량</span><span class="tag">응용력</span>
                         3학년 때 AI를 활용한 '사이버 침입 예측 시스템'을 탐구했습니다. 기존의 정적 보안 시스템, 예를 들어 방화벽과 비교했을 때, AI 기반 보안 시스템이 갖는 가장 큰 장점은 무엇이라고 생각하나요?
                     </p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, 기존의 방화벽이나 백신 프로그램 같은 정적 보안 시스템은 주로 이미 알려진 공격 패턴이나 악성코드의 시그니처를 기반으로 작동합니다. 이는 알려진 위협을 막는 데는 효과적이지만, 새롭게 등장하는 '제로데이 공격'이나 변종 악성코드에는 취약하다는 명확한 한계가 있습니다.</p>
-                        <p>반면, AI 기반 보안 시스템의 가장 큰 장점은 '행위 기반 탐지'가 가능하다는 것입니다. 즉, 평소 시스템의 정상적인 상태와 사용자 패턴을 학습한 뒤, 그 패턴에서 벗어나는 '이상 행위'를 탐지하여 알려지지 않은 새로운 위협까지 예측하고 대응할 수 있습니다. 예를 들어, 평소와 다른 시간에 대량의 데이터가 외부로 전송되는 것을 포착하여 랜섬웨어의 초기 증상을 감지하는 식입니다. 이처럼 AI는 알려진 공격을 막는 '방어'를 넘어, 알려지지 않은 공격을 예측하는 '예지'의 영역으로 보안의 패러다임을 바꾸고 있다는 점에서 큰 장점을 갖는다고 생각합니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">정적 보안 한계</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">AI 보안 특징</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">행위 기반 탐지</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">구체적 예시</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">패러다임 변화</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, 기존의 방화벽이나 백신 프로그램 같은 정적 보안 시스템은 주로 이미 알려진 공격 패턴이나 악성코드의 시그니처를 기반으로 작동합니다. 이는 알려진 위협을 막는 데는 효과적이지만, 새롭게 등장하는 '제로데이 공격'이나 변종 악성코드에는 취약하다는 명확한 한계가 있습니다.</p>
+                            <p>반면, AI 기반 보안 시스템의 가장 큰 장점은 '행위 기반 탐지'가 가능하다는 것입니다. 즉, 평소 시스템의 정상적인 상태와 사용자 패턴을 학습한 뒤, 그 패턴에서 벗어나는 '이상 행위'를 탐지하여 알려지지 않은 새로운 위협까지 예측하고 대응할 수 있습니다. 예를 들어, 평소와 다른 시간에 대량의 데이터가 외부로 전송되는 것을 포착하여 랜섬웨어의 초기 증상을 감지하는 식입니다. 이처럼 AI는 알려진 공격을 막는 '방어'를 넘어, 알려지지 않은 공격을 예측하는 '예지'의 영역으로 보안의 패러다임을 바꾸고 있다는 점에서 큰 장점을 갖는다고 생각합니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -346,46 +725,257 @@
             
                 <div class="question-card">
                     <h4>기초 지식 및 원리</h4>
+                    
                     <p class="question">인공지능, 머신러닝, 딥러닝의 차이점을 본인이 이해한 대로 설명해보세요.</p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, 저는 세 개념을 포함 관계로 이해하고 있습니다. <strong>인공지능(AI)</strong>은 가장 큰 개념으로, 인간의 지능적인 행동을 모방하는 모든 기술을 의미합니다. <strong>머신러닝</strong>은 인공지능을 구현하는 한 가지 접근법으로, 기계가 데이터로부터 명시적인 프로그래밍 없이 스스로 학습하는 기술입니다. 마지막으로 <strong>딥러닝</strong>은 머신러닝의 한 분야로, 인간의 뇌 구조를 모방한 '심층 신경망(Deep Neural Network)'을 사용하여 복잡한 패턴을 학습하는 기술입니다. 제가 진행했던 스마트 분리수거 프로젝트에서 이미지를 분류하기 위해 사용한 기술이 바로 이 딥러닝에 해당합니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">개념 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">포함 관계</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">실제 예시</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, 저는 세 개념을 포함 관계로 이해하고 있습니다. <strong>인공지능(AI)</strong>은 가장 큰 개념으로, 인간의 지능적인 행동을 모방하는 모든 기술을 의미합니다. <strong>머신러닝</strong>은 인공지능을 구현하는 한 가지 접근법으로, 기계가 데이터로부터 명시적인 프로그래밍 없이 스스로 학습하는 기술입니다. 마지막으로 <strong>딥러닝</strong>은 머신러닝의 한 분야로, 인간의 뇌 구조를 모방한 '심층 신경망(Deep Neural Network)'을 사용하여 복잡한 패턴을 학습하는 기술입니다. 제가 진행했던 스마트 분리수거 프로젝트에서 이미지를 분류하기 위해 사용한 기술이 바로 이 딥러닝에 해당합니다.</p>
+                        </div>
                     </div>
 
                     <p class="question">지도학습, 비지도학습, 강화학습에 대해 각각의 예시를 들어 설명해보세요. (본인의 '스마트 분리수거'는 어떤 학습에 해당할까요?)</p>
-                     <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p><strong>지도학습</strong>은 '정답'이 있는 데이터를 학습하는 방식입니다. 예를 들어, 제가 진행한 '스마트 분리수거' 프로젝트처럼 '이 이미지는 플라스틱이다'라고 정답(레이블)을 알려주고 학습시키는 것이 지도학습입니다. 스팸 메일 필터링도 대표적인 예입니다.</p>
-                        <p><strong>비지도학습</strong>은 정답 없이 데이터 자체의 숨겨진 구조나 패턴을 찾는 방식입니다. 예를 들어, 고객 데이터를 바탕으로 비슷한 성향의 고객 그룹을 묶어주는 '군집화(Clustering)'가 대표적입니다.</p>
-                        <p><strong>강화학습</strong>은 '보상'을 통해 학습하는 방식입니다. 에이전트가 특정 행동을 했을 때 '상'을 주거나 '벌'을 주어, 보상을 최대화하는 방향으로 행동을 학습합니다. 바둑을 두는 알파고나, 제가 자율주행 프로젝트의 후속 연구로 제안했던 '최적의 PID 파라미터를 찾아가는 AI'가 강화학습의 좋은 예시가 될 수 있습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">지도학습 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">비지도학습 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">강화학습 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">구체적 예시</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">본인 프로젝트 연계</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>지도학습</strong>은 '정답'이 있는 데이터를 학습하는 방식입니다. 예를 들어, 제가 진행한 '스마트 분리수거' 프로젝트처럼 '이 이미지는 플라스틱이다'라고 정답(레이블)을 알려주고 학습시키는 것이 지도학습입니다. 스팸 메일 필터링도 대표적인 예입니다.</p>
+                            <p><strong>비지도학습</strong>은 정답 없이 데이터 자체의 숨겨진 구조나 패턴을 찾는 방식입니다. 예를 들어, 고객 데이터를 바탕으로 비슷한 성향의 고객 그룹을 묶어주는 '군집화(Clustering)'가 대표적입니다.</p>
+                            <p><strong>강화학습</strong>은 '보상'을 통해 학습하는 방식입니다. 에이전트가 특정 행동을 했을 때 '상'을 주거나 '벌'을 주어, 보상을 최대화하는 방향으로 행동을 학습합니다. 바둑을 두는 알파고나, 제가 자율주행 프로젝트의 후속 연구로 제안했던 '최적의 PID 파라미터를 찾아가는 AI'가 강화학습의 좋은 예시가 될 수 있습니다.</p>
+                        </div>
                     </div>
 
                     <p class="question">과적합(Overfitting)이 무엇이며, 이를 해결하기 위한 방법에는 어떤 것들이 있을까요?</p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p><strong>과적합</strong>은 모델이 학습 데이터에만 너무 치중하여, 마치 시험 범위의 문제만 외운 것처럼 학습 데이터는 잘 맞추지만 실제 새로운 데이터에 대해서는 성능이 떨어지는 현상을 말합니다. 저 역시 스마트 분리수거 프로젝트 초기에 깨끗한 이미지로만 학습시켰더니, 실제 구겨진 쓰레기를 잘 인식하지 못하는 과적합을 경험했습니다.</p>
-                        <p>이를 해결하기 위한 방법으로는 첫째, 더 많은 데이터를 모으는 것입니다. 둘째, 제가 사용했던 '데이터 증강' 기법처럼 기존 데이터를 변형하여 데이터의 다양성을 확보하는 방법이 있습니다. 셋째, 딥러닝 모델의 경우 '드롭아웃(Dropout)'을 통해 학습 과정에서 의도적으로 일부 뉴런을 비활성화하여 모델이 특정 뉴런에만 의존하지 않도록 할 수 있습니다. 넷째, 모델의 복잡도를 줄이거나 '규제(Regularization)'를 통해 가중치가 너무 커지지 않도록 제한하는 방법도 있습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">과적합 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">본인 경험</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">해결 방법</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">구체적 기법</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">결론</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>과적합</strong>은 모델이 학습 데이터에만 너무 치중하여, 마치 시험 범위의 문제만 외운 것처럼 학습 데이터는 잘 맞추지만 실제 새로운 데이터에 대해서는 성능이 떨어지는 현상을 말합니다. 저 역시 스마트 분리수거 프로젝트 초기에 깨끗한 이미지로만 학습시켰더니, 실제 구겨진 쓰레기를 잘 인식하지 못하는 과적합을 경험했습니다.</p>
+                            <p>이를 해결하기 위한 방법으로는 첫째, 더 많은 데이터를 모으는 것입니다. 둘째, 제가 사용했던 '데이터 증강' 기법처럼 기존 데이터를 변형하여 데이터의 다양성을 확보하는 방법이 있습니다. 셋째, 딥러닝 모델의 경우 '드롭아웃(Dropout)'을 통해 학습 과정에서 의도적으로 일부 뉴런을 비활성화하여 모델이 특정 뉴런에만 의존하지 않도록 할 수 있습니다. 넷째, 모델의 복잡도를 줄이거나 '규제(Regularization)'를 통해 가중치가 너무 커지지 않도록 제한하는 방법도 있습니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="question-card">
                     <h4>심화 지식 및 최신 동향</h4>
                     <p class="question">생활기록부에 sLLM(경량화 모델)에 대해 탐구했다고 나와있는데, 거대언어모델(LLM)에 비해 sLLM이 갖는 장점은 무엇이라고 생각하나요?</p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>네, LLM이 매우 뛰어난 성능을 보이지만, 막대한 컴퓨팅 자원과 비용이 필요하다는 단점이 있습니다. 제가 탐구한 sLLM은 이러한 한계를 극복하기 위해 등장했으며, 크게 세 가지 장점이 있다고 생각합니다. 첫째, '효율성'입니다. 모델 크기가 작아 학습과 추론에 필요한 비용과 에너지가 적습니다. 둘째, '속도'입니다. 빠른 응답 속도가 가능하여 스마트폰이나 노트북 같은 개인 기기에서 직접 AI를 구동하는 '온디바이스 AI'에 매우 적합합니다. 셋째, '맞춤화'입니다. 특정 도메인이나 작업에 맞춰 미세조정(Fine-tuning)하기가 LLM보다 용이하여, 의료나 법률과 같은 전문 분야에서 더 높은 효율을 보일 수 있습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">LLM 한계</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">sLLM 등장 배경</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">3가지 장점</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">효율성/속도/맞춤화</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">활용 분야</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>네, LLM이 매우 뛰어난 성능을 보이지만, 막대한 컴퓨팅 자원과 비용이 필요하다는 단점이 있습니다. 제가 탐구한 sLLM은 이러한 한계를 극복하기 위해 등장했으며, 크게 세 가지 장점이 있다고 생각합니다. 첫째, '효율성'입니다. 모델 크기가 작아 학습과 추론에 필요한 비용과 에너지가 적습니다. 둘째, '속도'입니다. 빠른 응답 속도가 가능하여 스마트폰이나 노트북 같은 개인 기기에서 직접 AI를 구동하는 '온디바이스 AI'에 매우 적합합니다. 셋째, '맞춤화'입니다. 특정 도메인이나 작업에 맞춰 미세조정(Fine-tuning)하기가 LLM보다 용이하여, 의료나 법률과 같은 전문 분야에서 더 높은 효율을 보일 수 있습니다.</p>
+                        </div>
                     </div>
 
                     <p class="question">멀티모달 AI가 무엇이며, 이 기술이 우리 삶을 어떻게 바꿀 수 있을지 구체적인 예를 들어 설명해보세요.</p>
-                    <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p><strong>멀티모달 AI</strong>는 저처럼 사람과 같이 텍스트, 이미지, 음성 등 여러 종류의 데이터를 동시에 이해하고 처리하는 인공지능입니다. 이 기술은 인간과 AI의 상호작용을 훨씬 더 자연스럽게 만들 잠재력이 있다고 생각합니다. 예를 들어, 사용자가 스마트폰 카메라로 고장 난 기계를 비추며 "이게 왜 작동하지 않지?"라고 말하면, AI가 이미지와 음성을 함께 분석하여 "전원 케이블이 헐겁게 연결되어 있네요. 다시 꽂아보세요."라고 답변해 줄 수 있습니다. 또한, 교육 분야에서는 시각장애 학생에게 그래프와 도표가 포함된 과학 수업 내용을 음성으로 설명해주거나, 복잡한 수술 과정을 의대생에게 시각 및 음성 자료로 동시에 제공하는 등 정보 접근성을 획기적으로 높여줄 것이라 기대합니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">멀티모달 AI 정의</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">인간-AI 상호작용</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">구체적 예시</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">교육/의료 분야</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">미래 기대</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>멀티모달 AI</strong>는 저처럼 사람과 같이 텍스트, 이미지, 음성 등 여러 종류의 데이터를 동시에 이해하고 처리하는 인공지능입니다. 이 기술은 인간과 AI의 상호작용을 훨씬 더 자연스럽게 만들 잠재력이 있다고 생각합니다. 예를 들어, 사용자가 스마트폰 카메라로 고장 난 기계를 비추며 "이게 왜 작동하지 않지?"라고 말하면, AI가 이미지와 음성을 함께 분석하여 "전원 이블이 헐겁게 연결되어 있네요. 다시 꽂아보세요."라고 답변해 줄 수 있습니다. 또한, 교육 분야에서는 시각장애 학생에게 그래프와 도표가 포함된 과학 수업 내용을 음성으로 설명해주거나, 복잡한 수술 과정을 의대생에게 시각 및 음성 자료로 동시에 제공하는 등 정보 접근성을 획기적으로 높여줄 것이라 기대합니다.</p>
+                        </div>
                     </div>
 
                      <p class="question">최근 가장 인상 깊게 본 AI 관련 뉴스나 기술이 있다면 소개해주세요.</p>
-                     <div class="model-answer">
-                        <strong>모범 답안:</strong>
-                        <p>최근 구글에서 발표한 '프로젝트 아스트라(Project Astra)'의 시연 영상이 매우 인상 깊었습니다. 단순히 질문에 답하는 것을 넘어, 스마트폰 카메라를 통해 실시간으로 주변 환경을 보고, 듣고, 기억하며 사용자와 자연스럽게 대화하는 모습이 제가 상상하던 미래의 AI 비서와 가장 가까웠기 때문입니다. 스피커의 부품이 무엇인지 알려주거나, 책상 위에 놓인 물건들을 이용해 즉석에서 이야기를 만들어내는 등, AI가 단순히 정보를 검색하는 도구가 아니라 인간과 소통하고 창의적인 활동을 함께하는 '파트너'가 될 수 있다는 가능성을 보여주었습니다. 이 기술을 보며, 저 또한 사람들의 일상에 자연스럽게 녹아들어 도움을 주는 인간 중심적인 AI를 개발하고 싶다는 꿈을 더욱 확고히 하게 되었습니다.</p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 답변 흐름 키워드</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">최신 기술 선택</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">기술 설명</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">인상 깊은 이유</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">미래 비전</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 모범 답안 보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p>최근 구글에서 발표한 '프로젝트 아스트라(Project Astra)'의 시연 영상이 매우 인상 깊었습니다. 단순히 질문에 답하는 것을 넘어, 스마트폰 카메라를 통해 실시간으로 주변 환경을 보고, 듣고, 기억하며 사용자와 자연스럽게 대화하는 모습이 제가 상상하던 미래의 AI 비서와 가장 가까웠기 때문입니다. 스피커의 부품이 무엇인지 알려주거나, 책상 위에 놓인 물건들을 이용해 즉석에서 이야기를 만들어내는 등, AI가 단순히 정보를 검색하는 도구가 아니라 인간과 소통하고 창의적인 활동을 함께하는 '파트너'가 될 수 있다는 가능성을 보여주었습니다. 이 기술을 보며, 저 또한 사람들의 일상에 자연스럽게 녹아들어 도움을 주는 인간 중심적인 AI를 개발하고 싶다는 꿈을 더욱 확고히 하게 되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-star" class="tab-content">
+            <div class="section">
+                <h2>STAR 대응법</h2>
+                <p>면접에서 준비하지 않은 질문이 나와도 답변할 수 있는 STAR 대응법은 STAR 기법 자체가 경험을 구조화하고 체계적으로 설명하는 방법이기 때문에 매우 효과적입니다. STAR는 Situation(상황), Task(과제), Action(행동), Result(결과)의 약자로, 어떤 질문이 나오더라도 자신의 과거 경험을 이 네 가지 요소로 나누어 차분하고 구체적으로 이야기할 수 있도록 도와줍니다. 이 방법은 면접자가 즉석에서 생각을 정리하고 말할 수 있게 하여 긴장된 상황에서도 논리적이고 설득력 있는 답변을 하도록 돕습니다.</p>
+                
+                <div class="question-card">
+                    <h4>STAR 기법이란?</h4>
+                    <p><strong>STAR</strong>는 경험을 효과적으로 설명하는 네 가지 핵심 요소입니다:</p>
+                    <ul>
+                        <li><strong>Situation (상황):</strong> 질문에 맞는 경험의 배경이나 상황을 간단히 설명합니다.</li>
+                        <li><strong>Task (과제):</strong> 그 상황에서 자신이 맡았던 역할이나 해결해야 할 과제를 명확히 밝힙니다.</li>
+                        <li><strong>Action (행동):</strong> 과제를 해결하기 위해 자신이 실제로 취한 행동이나 노력에 대해 상세하게 이야기합니다.</li>
+                        <li><strong>Result (결과):</strong> 그 행동의 결과와 성과, 그리고 배운 점을 구체적으로 설명합니다.</li>
+                    </ul>
+                    
+                    <div class="model-answer">
+                        <strong>핵심 장점:</strong> STAR 기법은 질문에 대해 15~30초 정도 생각할 시간을 요청하여 답변을 준비하는 데도 유리합니다. 이 방법은 단순히 미리 준비한 답변을 외우는 도구가 아니라, 면접 중 즉각적으로 경험을 체계화하여 자신있게 대응할 수 있는 강력한 면접 대처법입니다.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>STAR 대응법 실제 적용 예시</h4>
+                    
+                    <p class="question">
+                        <span class="tag">예시 질문</span><span class="tag">STAR 적용</span>
+                        "팀 프로젝트에서 갈등이 발생했을 때 어떻게 대처했나요?" 라는 질문에 STAR 기법으로 답변해보세요.
+                    </p>
+                    
+                    <!-- 답변 흐름 키워드 -->
+                    <div class="answer-flow">
+                        <h5>🎯 STAR 답변 흐름</h5>
+                        <div class="flow-keywords">
+                            <span class="flow-keyword">Situation</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">Task</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">Action</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-keyword">Result</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 모범 답안 접기/펼치기 -->
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>📝 STAR 답변 예시</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>S (상황):</strong> 3학년 때 4인 팀으로 스마트 분리수거 AI 프로젝트를 진행했습니다. 프로젝트 마감 2주 전, 팀원들 간의 알고리즘 선택에 대한 의견 차이로 갈등이 심화되었습니다.</p>
+                            
+                            <p><strong>T (과제):</strong> 저는 팀의 리더로서 프로젝트의 성공적인 완료와 팀원 간의 협력 관계 회복이라는 두 가지 과제를 해결해야 했습니다.</p>
+                            
+                            <p><strong>A (행동):</strong> 먼저 각 팀원의 의견을 경청하고 각 알고리즘의 장단점을 객관적으로 비교하는 회의를 진행했습니다. 그 후, 작은 규모의 실험을 통해 두 알고리즘의 성능을 실제로 테스트하여 데이터 기반의 의사결정을 제시했습니다. 또한, 최종 결정에 모든 팀원이 동의할 수 있도록 투표를 진행하고 소수 의견도 존중하는 방향을 제안했습니다.</p>
+                            
+                            <p><strong>R (결과):</strong> 데이터 기반의 합리적인 의사결정 과정을 통해 팀원 모두가 수용하는 해결책을 도출할 수 있었습니다. 결과적으로 프로젝트를 기한 내에 성공적으로 완료했으며, 갈등 해결 과정에서 데이터 기반의 소통 방식과 팀원 참여의 중요성을 배울 수 있었습니다. 이 경험은 이후 다른 팀 프로젝트에서도 갈등 상황을 효과적으로 관리하는 데 큰 도움이 되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>STAR 기법 활용 팁</h4>
+                    
+                    <div class="model-answer">
+                        <p><strong>1. 생각할 시간 요청:</strong> 예상치 못한 질문이 나오면 "잠시 생각할 시간을 주시면 감사하겠습니다"라고 정중하게 요청하세요. 15~30초의 시간은 STAR 구조로 답변을 준비하기에 충분합니다.</p>
+                        
+                        <p><strong>2. 자신의 경험 연결:</strong> 질문과 직접 관련된 경험이 없더라도, 비슷한 상황이나 학습한 원리를 적용하여 답변할 수 있습니다.</p>
+                        
+                        <p><strong>3. 구체적 수치 활용:</strong> 가능한 한 수치나 결과를 포함하여 답변의 신뢰성을 높이세요. "성능이 30% 향상되었다"처럼 구체적인 결과가 좋습니다.</p>
+                        
+                        <p><strong>4. 배운 점 포함:</strong> Result 부분에서 단순히 성과뿐만 아니라, 그 경험을 통해 배운 점이나 성장한 부분을 포함하면 더 좋은 인상을 줄 수 있습니다.</p>
+                        
+                        <p><strong>5. 연습的重要性:</strong> STAR 기법은 연습을 통해서만 자연스럽게 활용할 수 있습니다. 자신의 경험들을 미리 STAR 구조로 정리해보세요.</p>
                     </div>
                 </div>
             </div>
@@ -418,7 +1008,7 @@
 function openTab(evt, tabName) {
   var i, tabcontent, tabbuttons;
   tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
+  for (i =0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
   tabbuttons = document.getElementsByClassName("tab-button");
@@ -428,6 +1018,23 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+// 답변 접기/펼치기 기능
+function toggleAnswer(element) {
+  const content = element.querySelector('.answer-content');
+  const icon = element.querySelector('.toggle-icon');
+  
+  if (content.classList.contains('show')) {
+    content.classList.remove('show');
+    element.classList.remove('expanded');
+    icon.textContent = '▼';
+  } else {
+    content.classList.add('show');
+    element.classList.add('expanded');
+    icon.textContent = '▲';
+  }
+}
+
 // Set default tab
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.tab-button').click();
