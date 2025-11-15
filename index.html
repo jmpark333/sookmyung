@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙명여대 인공지능학부 면접 완벽 대비</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            color: #003366;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            border-left: 5px solid #4a90e2;
+            padding-left: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #003366;
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 1em;
+        }
+        .tab-menu {
+            display: flex;
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            color: #495057;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-button.active {
+            color: #003366;
+            font-weight: 700;
+            border-bottom: 3px solid #4a90e2;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            background-color: #fdfdff;
+        }
+        .question-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+        .question-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .question-card h4 {
+            margin-top: 0;
+            color: #1976d2;
+            font-size: 1.2em;
+            border-left: 4px solid #1976d2;
+        }
+        .question {
+            font-weight: 500;
+            color: #343a40;
+            margin-top: 1.5em;
+        }
+        .follow-up {
+            margin-left: 20px;
+            border-left: 3px solid #79a6d2;
+            padding-left: 15px;
+            font-size: 0.95em;
+        }
+        .model-answer {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9f3ff;
+            border: 1px solid #a0c4ff;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+        .model-answer strong {
+            color: #004085;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        .intro, .conclusion {
+            background-color: #eef5ff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 700;
+        }
+        .required {
+            font-weight: 700;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>숙명여대 인공지능학부 면접 완벽 대비</h1>
+        
+        <div class="tab-menu">
+            <button class="tab-button active" onclick="openTab(event, 'tab-dept-info')">학과 정보</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-dept-fit')">학과 맞춤 질문</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-record')">생기부 기반 질문</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-major')">AI 전공 질문</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-final')">최종 준비</button>
+        </div>
+
+        <div id="tab-dept-info" class="tab-content active">
+            <div class="section">
+                <h2>숙명여대 인공지능공학부 알아보기</h2>
+                
+                <div class="question-card">
+                    <h4>학부장 인사말 (핵심 요약)</h4>
+                    <p>인공지능공학부는 <strong>인간 중심의 사고</strong>를 바탕으로 창의적 해결책을 모색하는 <strong>응용 AI 개발자</strong> 양성을 지향합니다. 기술적, 실용적, 사회적 문제에 유연하게 대처할 수 있는 <strong>융합형 공학 인재</strong>를 목표로 합니다.</p>
+                    <p><strong>3가지 전문 트랙 운영:</strong></p>
+                    <ul>
+                        <li><strong>AI 엔지니어링 트랙:</strong> 딥러닝 모델 설계, 데이터 엔지니어링, AIOps</li>
+                        <li><strong>AI SW 솔루션 트랙:</strong> AI 소프트웨어 아키텍처, AI 서비스 기획/개발, 컴퓨터 비전</li>
+                        <li><strong>AI 감성 컴퓨팅 트랙:</strong> 감성 인식 기술, 감성 기기 인터페이스, UX/UI</li>
+                    </ul>
+                    <p>졸업 후에는 AI 개발, ICT 서비스, 콘텐츠 개발 등 다양한 분야의 대기업, 연구소 등으로 진출합니다.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>교육 목표</h4>
+                    <p>지능 정보화 사회에 발맞추어 최신 SW기술과 <strong>여성 친화적인 인공지능 전문지식</strong>을 교육합니다. 미래 신성장 산업의 핵심인 <strong>인공지능 모델링 및 융합 분야</strong>에서 요구하는 지능형 소프트웨어 전문 인력을 양성하는 것을 목표로 합니다.</p>
+                    <ul>
+                        <li>수학, 통계, 컴퓨터 과학 등 기반 지식 제공으로 이론적 이해 강화</li>
+                        <li><strong>프로젝트 기반 학습(PBL)</strong>과 현장 실습을 통한 실전 경험 및 산업 문제 해결 능력 함양</li>
+                        <li>기계 학습, 자연어 처리, 컴퓨터 비전 등 다양한 AI 분야의 체계화된 지식 교육</li>
+                    </ul>
+                </div>
+                
+                <div class="question-card">
+                    <h4>인공지능공학부 커리큘럼</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>1학기</th>
+                                <th>2학기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1학년</strong></td>
+                                <td>인공지능IT기술이해<br><span class="required">프로그래밍입문 (Python)(필수)</span></td>
+                                <td><span class="required">공학수학I(필수)</span><br><span class="required">프로그래밍방법론(필수)</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2학년</strong></td>
+                                <td><span class="required">공학수학II(필수)</span><br><span class="required">객체지향프로그래밍 (Java)(필수)</span><br><span class="required">컴퓨터아키텍쳐(필수)</span><br><span class="required">데이터구조(필수)</span><br><span class="required">오픈소스프로그래밍(필수)</span></td>
+                                <td><span class="required">웹프로그래밍(캡스톤디자인)(필수)</span><br>알고리즘입문<br>모바일프로그래밍 (Android)<br><span class="required">인공지능입문(필수)</span><br>데이터베이스</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3학년</strong></td>
+                                <td>인공지능과기계학습<br>컴퓨터그래픽프로그래밍<br>데이터패턴인식<br>영상처리와응용<br>UI/UX</td>
+                                <td>딥러닝원리와응용<br>AR/VR게임프로그래밍<br>네트워크<br>운영체제원리<br>센서프로그래밍(캡스톤디자인)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4학년</strong></td>
+                                <td>지능형IoT응용(캡스톤디자인)<br>데이터분석과활용<br>HCI개론(캡스톤디자인)<br>클라우드컴퓨팅<br>졸업프로젝트</td>
+                                <td>지능형언어처리<br>시스템보안<br>IT소프트웨어공학<br>컴퓨터비전<br>졸업프로젝트</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 style="margin-top: 2em;">주요 교과목 개요</h4>
+                    <h5>1학년 1학기</h5>
+                    <p><strong>프로그래밍입문(Introduction to Computer Programming):</strong> 파이썬 문법과 의미를 배우고, 프로그래밍의 기본 원리를 습득합니다. IT공학과의 다양한 교과목 이수를 위한 필수 소양을 기릅니다.</p>
+                    <p><strong>인공지능IT기술의이해(Introduction to IT for Artificial Intelligence):</strong> AI 기술 이해를 위한 IT의 기본 개념과 원리를 학습하고, AI와 IT의 융합 응용 분야를 탐색합니다.</p>
+
+                    <h5>1학년 2학기</h5>
+                    <p><strong>공학수학I(Engineering Mathematics I):</strong> 컴퓨터의 기초가 되는 이산수학과 AI의 초석이 되는 확률과 통계를 학습하여 논리적 사고력을 배양합니다.</p>
+                    <p><strong>프로그래밍방법론(Programming Methodology):</strong> C 및 C++ 언어를 통해 객체 지향 개념을 포함한 응용 프로그래밍 방법을 학습하여 실용적인 기반 기술을 다집니다.</p>
+
+                    <h5>2학년 1학기</h5>
+                    <p><strong>공학수학II(Engineering Mathematics II):</strong> 컴퓨터 그래픽스, 비전 등 AI 및 IT 주요 분야에 필요한 기본 수학을 학습하고 파이썬 실습을 통해 공학 문제 해결의 토대를 마련합니다.</p>
+                    <p><strong>오픈소스프로그래밍(Open Source Programming):</strong> 오픈소스의 역사, 라이센스를 이해하고 Git 등 관리 도구를 익혀 오픈소스 생태계에 기여하는 방법을 학습합니다.</p>
+                    
+                    <h5>2학년 2학기</h5>
+                    <p><strong>인공지능입문(Introduction to Artificial Intelligence):</strong> AI의 기본 개념, 지식 표현, 문제 해결 방법을 학습하여 기계학습과 딥러닝의 기초를 마련합니다.</p>
+                    <p><strong>웹프로그래밍(Web Programming):</strong> HTML5, CSS3, Javascript, Node.js 등을 통해 웹 프론트엔드와 백엔드 프로그래밍의 전반을 이해합니다.</p>
+                    <p><strong>알고리즘입문(Multimedia Algorithms):</strong> 복잡도 분석, 정렬, 검색 트리, 그래프 알고리즘 등을 통해 효율적인 문제 해결 능력을 배양합니다.</p>
+                    
+                    <h5>3학년 이후 주요 과목</h5>
+                    <p><strong>인공지능과기계학습 / 딥러닝원리와응용:</strong> 기계학습과 딥러닝의 핵심 이론과 다양한 방법론을 심도 있게 학습합니다.</p>
+                    <p><strong>데이터패턴인식 / 데이터분석과활용:</strong> 데이터에서 유의미한 패턴을 찾고 지식을 추출하는 데이터 마이닝 및 분석 기법을 배웁니다.</p>
+                    <p><strong>영상처리와응용 / 컴퓨터비전:</strong> 사람의 시각 시스템을 모방하여 컴퓨터가 이미지를 이해하고 해석하는 기술을 학습합니다.</p>
+                    <p><strong>지능형언어처리:</strong> 자연어처리(NLP)의 고전적 방법론부터 최신 딥러닝 기반 방법론까지 체계적으로 학습합니다.</p>
+                    <p><strong>시스템보안 / 네트워크 / 운영체제원리:</strong> AI 시스템을 안정적으로 운영하기 위한 핵심 컴퓨터 과학(CS) 지식을 습득합니다.</p>
+                    <p><strong>캡스톤디자인 / 졸업프로젝트:</strong> 전공 지식을 총동원하여 팀 단위로 실무 프로젝트를 기획, 개발, 관리하며 실전 능력을 함양합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-dept-fit" class="tab-content">
+            <div class="section">
+                <h2>학과 맞춤 질문</h2>
+                <p>학과의 교육 목표를 이해하고, 자신의 강점과 경험이 학과의 인재상과 어떻게 부합하는지 어필하는 것이 중요합니다.</p>
+                
+                <div class="question-card">
+                    <h4>학과 인재상 맞춤 질문</h4>
+                    <p class="question">
+                        <span class="tag">전공적합성</span><span class="tag">발전가능성</span>
+                        우리 인공지능공학부는 '프로젝트 기반 학습(PBL)'을 통해 산업 현장의 문제 해결 능력을 함양하는 것을 중요하게 생각합니다. 지원자의 생활기록부를 보면 자율주행, 스마트 분리수거 등 다양한 프로젝트 경험이 있는데, 그중 가장 기억에 남는 프로젝트는 무엇이며, 그 경험이 우리 학부의 인재상과 어떻게 부합한다고 생각하나요?
+                    </p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, 저는 3학년 때 진행했던 '자율주행차의 PID 제어 파라미터 최적화' 프로젝트가 가장 기억에 남습니다. 처음에는 제어공학 이론을 적용하면 쉽게 해결될 것이라 생각했지만, 시뮬레이션 과정에서 계속된 오버슈팅 문제에 부딪혔습니다. 이 문제를 해결하기 위해 팀원들과 함께 손실 함수를 직접 설계하고, 경사 하강법을 적용하여 파라미터를 최적화하는 과정을 거쳤습니다. </p>
+                        <p>이 경험을 통해 이론 학습만으로는 알 수 없는 실제 문제의 복잡성과, 이를 해결하기 위한 창의적인 접근법의 중요성을 깨달았습니다. 이는 숙명여대 인공지능공학부가 추구하는 '프로젝트 기반 학습'의 가치와 정확히 일치한다고 생각합니다. 저는 고교 시절의 작은 성공과 실패 경험을 바탕으로, 입학 후 학부의 체계적인 PBL 커리큘럼 안에서 더 큰 산업적 문제를 해결하는 전문가로 성장하고 싶습니다.</p>
+                    </div>
+                    <div class="follow-up">
+                        <p class="question">
+                            <strong>(추가 질문)</strong> 우리 학부는 '인공지능 모델링 및 융합 분야'의 인재 양성을 목표로 합니다. 지원자는 AI 기술을 보안, 환경 등 다양한 분야와 연결하는 탐구 활동을 많이 했습니다. 본인이 생각하는 'AI 융합'이란 무엇이며, 앞으로 어떤 분야와 AI를 융합하여 새로운 가치를 만들고 싶은가요?
+                        </p>
+                         <div class="model-answer">
+                            <strong>모범 답안:</strong>
+                            <p>제가 생각하는 'AI 융합'은 단순히 다른 분야에 AI 기술을 적용하는 것을 넘어, 해당 분야의 도메인 지식을 깊이 이해하고 AI와 결합하여 기존에 없던 새로운 가치를 창출하는 시너지 효과라고 생각합니다. 예를 들어, 단순히 병원 기록을 전산화하는 것은 IT 기술의 활용이지만, 그 기록(데이터)을 AI로 분석하여 질병을 예측하는 것은 진정한 의미의 융합입니다.</p>
+                            <p>저는 고등학교 때 화학과 AI를 융합하여 전해질을 분류하는 탐구를 진행하며 융합 연구의 가능성을 보았습니다. 대학에 진학해서는 특히 'AI 신약 개발' 분야에 도전하고 싶습니다. 화학Ⅱ 시간에 배운 분자 구조와 반응에 대한 지식을 바탕으로, 수많은 화합물 중에서 신약 후보 물질을 빠르고 정확하게 예측하는 AI 모델을 개발하는 연구를 통해 인류의 건강에 기여하고 싶습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-record" class="tab-content">
+            <div class="section">
+                <h2>생기부 기반 질문</h2>
+                <p>본인의 생활기록부는 AI와 컴퓨터공학에 대한 일관되고 심도 있는 탐구 과정을 보여주는 훌륭한 자료입니다. 각 활동에 대해 '왜 했는지(동기)', '무엇을 했는지(과정)', '무엇을 배우고 느꼈는지(결과)', 그리고 '앞으로 어떻게 발전시킬 것인지(연계/심화)'를 명확히 정리해야 합니다. </p>
+                
+                <div class="question-card">
+                    <h4>1. 자율주행 알고리즘 설계 (3학년)</h4>
+                    <p class="question">
+                        <span class="tag">진로역량</span><span class="tag">논리적 사고력</span>
+                        3학년 때 진행한 자율주행차의 PID 제어 파라미터 최적화 프로젝트에 대해 설명해주세요. 특히 손실 함수를 직접 정의한 과정이 인상 깊은데, 왜 Min-Max 정규화와 지수 함수를 적용했나요?
+                    </p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, 해당 프로젝트는 P제어만 사용했을 때 발생하는 오버슈팅, 즉 차량의 진동 현상을 해결하기 위해 시작되었습니다. 안정적인 차선 유지를 위해서는 PID 제어의 세 파라미터(비례, 적분, 미분)를 최적화하는 것이 중요하다고 생각했습니다.</p>
+                        <p>손실 함수를 설계할 때, 단순히 목표 지점과의 오차만 반영하면 안정적인 제어가 어렵다고 판단했습니다. 그래서 제어 시스템의 동적 특성인 '과도 응답'과 '정상 상태'를 모두 고려했습니다. 하지만 각 특성을 나타내는 손실 값들의 스케일이 달라, 이를 그대로 합산하면 특정 손실 값에만 최적화가 치우칠 수 있었습니다. 이 문제를 해결하기 위해 <strong>Min-Max 정규화</strong>를 사용하여 모든 손실 값을 0과 1 사이로 표준화했습니다.</p>
+                        <p>또한, <strong>지수 함수</strong>를 적용한 이유는 오차가 클 때 더 큰 패널티를 부여하기 위함이었습니다. 이를 통해 모델이 초기에 큰 오차를 빠르게 줄여나가도록 유도했고, 결과적으로 더 신속하고 안정적으로 최적의 파라미터에 수렴할 수 있었습니다. 이 과정을 통해 수학적 도구를 공학 문제 해결에 전략적으로 적용하는 경험을 할 수 있었습니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>2. AI 기반 스마트 분리수거 프로그램 (3학년)</h4>
+                    <p class="question">
+                        <span class="tag">진로역량</span><span class="tag">창의성</span>
+                        'AI 기반 스마트 분리수거 분류 프로그램'을 개발한 경험에 대해 말해주세요. 티처블 머신을 사용했다고 했는데, 데이터 수집과 모델 학습 과정에서 겪었던 어려움은 무엇이고 어떻게 해결했나요?
+                    </p>
+                     <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, 환경 문제에 기술적으로 기여하고 싶다는 생각에 AI 분리수거 프로그램을 개발했습니다. 티처블 머신을 사용해 초기 모델을 만들었는데, 가장 큰 어려움은 '데이터의 다양성 부족'이었습니다. 제가 수집한 데이터는 대부분 깨끗하고 정면에서 촬영된 쓰레기 이미지였습니다. 이로 인해 실제 생활에서 흔히 볼 수 있는, 구겨지거나 오염되거나 다른 각도에서 보이는 쓰레기는 잘 인식하지 못하는 '과적합' 현상이 발생했습니다.</p>
+                        <p>이 문제를 해결하기 위해 두 가지 방법을 사용했습니다. 첫째, 의도적으로 다양한 상태의 쓰레기 이미지를 추가로 수집했습니다. 둘째, '데이터 증강(Data Augmentation)' 기법을 적극적으로 활용했습니다. 기존 이미지를 좌우로 뒤집거나, 임의로 회전시키고, 밝기를 조절하는 등의 처리를 통해 한정된 데이터로도 모델이 다양한 상황에 대응할 수 있도록 학습 데이터의 양과 다양성을 늘렸습니다. 이 과정을 통해 AI 모델의 성능은 데이터의 양뿐만 아니라 '질'과 '다양성'에 의해 크게 좌우된다는 것을 체감할 수 있었습니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>3. AI와 윤리/사회 문제에 대한 고찰</h4>
+                    <p class="question">
+                        <span class="tag">가치관</span><span class="tag">비판적 사고</span>
+                        '대량살상 수학무기'를 읽고 AI가 양극화를 심화시킬 수 있다고 우려했고, '해킹 윤리'를 읽으며 윤리적 해커의 역할을 탐구했습니다. 본인이 생각하는 '바람직한 AI 개발자'의 모습은 무엇이며, 기술이 사회에 미칠 부정적 영향을 최소화하기 위해 개발자는 어떤 노력을 해야 할까요?
+                    </p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>제가 생각하는 '바람직한 AI 개발자'는 단순히 코드를 잘 짜는 기술자를 넘어, 자신의 기술이 사회에 미칠 영향을 깊이 성찰하고 사회적 책임을 다하는 'AI 윤리 설계자'라고 생각합니다.</p>
+                        <p>이를 위해 개발자는 세 가지 노력을 해야 한다고 생각합니다. 첫째, '데이터 편향성'을 항상 경계해야 합니다. AI 모델은 데이터에 담긴 편견까지 학습하기 때문에, 데이터 수집 단계부터 다양성과 공정성을 확보하려는 노력이 필수적입니다. 둘째, '알고리즘의 투명성'을 높여야 합니다. AI의 판단 과정을 사용자가 이해할 수 있도록 돕는 XAI(설명가능 AI) 기술을 적극적으로 도입하여 '블랙박스' 문제를 해결해야 합니다. 셋째, '기술의 오용 가능성'을 예측하고 예방해야 합니다. 자신이 개발한 기술이 악용될 가능성을 미리 생각해보고, 이를 방지할 수 있는 안전장치를 설계 단계부터 고민하는 비판적 자세가 필요합니다. 결국 기술의 발전 방향을 결정하는 것은 사람이므로, 올바른 가치관을 가진 개발자의 역할이 무엇보다 중요하다고 생각합니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>4. AI와 사이버 보안 (3학년)</h4>
+                    <p class="question">
+                        <span class="tag">진로역량</span><span class="tag">응용력</span>
+                        3학년 때 AI를 활용한 '사이버 침입 예측 시스템'을 탐구했습니다. 기존의 정적 보안 시스템, 예를 들어 방화벽과 비교했을 때, AI 기반 보안 시스템이 갖는 가장 큰 장점은 무엇이라고 생각하나요?
+                    </p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, 기존의 방화벽이나 백신 프로그램 같은 정적 보안 시스템은 주로 이미 알려진 공격 패턴이나 악성코드의 시그니처를 기반으로 작동합니다. 이는 알려진 위협을 막는 데는 효과적이지만, 새롭게 등장하는 '제로데이 공격'이나 변종 악성코드에는 취약하다는 명확한 한계가 있습니다.</p>
+                        <p>반면, AI 기반 보안 시스템의 가장 큰 장점은 '행위 기반 탐지'가 가능하다는 것입니다. 즉, 평소 시스템의 정상적인 상태와 사용자 패턴을 학습한 뒤, 그 패턴에서 벗어나는 '이상 행위'를 탐지하여 알려지지 않은 새로운 위협까지 예측하고 대응할 수 있습니다. 예를 들어, 평소와 다른 시간에 대량의 데이터가 외부로 전송되는 것을 포착하여 랜섬웨어의 초기 증상을 감지하는 식입니다. 이처럼 AI는 알려진 공격을 막는 '방어'를 넘어, 알려지지 않은 공격을 예측하는 '예지'의 영역으로 보안의 패러다임을 바꾸고 있다는 점에서 큰 장점을 갖는다고 생각합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-major" class="tab-content">
+            <div class="section">
+                <h2>AI 전공 기출 및 심화 예상 질문</h2>
+            
+                <div class="question-card">
+                    <h4>기초 지식 및 원리</h4>
+                    <p class="question">인공지능, 머신러닝, 딥러닝의 차이점을 본인이 이해한 대로 설명해보세요.</p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, 저는 세 개념을 포함 관계로 이해하고 있습니다. <strong>인공지능(AI)</strong>은 가장 큰 개념으로, 인간의 지능적인 행동을 모방하는 모든 기술을 의미합니다. <strong>머신러닝</strong>은 인공지능을 구현하는 한 가지 접근법으로, 기계가 데이터로부터 명시적인 프로그래밍 없이 스스로 학습하는 기술입니다. 마지막으로 <strong>딥러닝</strong>은 머신러닝의 한 분야로, 인간의 뇌 구조를 모방한 '심층 신경망(Deep Neural Network)'을 사용하여 복잡한 패턴을 학습하는 기술입니다. 제가 진행했던 스마트 분리수거 프로젝트에서 이미지를 분류하기 위해 사용한 기술이 바로 이 딥러닝에 해당합니다.</p>
+                    </div>
+
+                    <p class="question">지도학습, 비지도학습, 강화학습에 대해 각각의 예시를 들어 설명해보세요. (본인의 '스마트 분리수거'는 어떤 학습에 해당할까요?)</p>
+                     <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p><strong>지도학습</strong>은 '정답'이 있는 데이터를 학습하는 방식입니다. 예를 들어, 제가 진행한 '스마트 분리수거' 프로젝트처럼 '이 이미지는 플라스틱이다'라고 정답(레이블)을 알려주고 학습시키는 것이 지도학습입니다. 스팸 메일 필터링도 대표적인 예입니다.</p>
+                        <p><strong>비지도학습</strong>은 정답 없이 데이터 자체의 숨겨진 구조나 패턴을 찾는 방식입니다. 예를 들어, 고객 데이터를 바탕으로 비슷한 성향의 고객 그룹을 묶어주는 '군집화(Clustering)'가 대표적입니다.</p>
+                        <p><strong>강화학습</strong>은 '보상'을 통해 학습하는 방식입니다. 에이전트가 특정 행동을 했을 때 '상'을 주거나 '벌'을 주어, 보상을 최대화하는 방향으로 행동을 학습합니다. 바둑을 두는 알파고나, 제가 자율주행 프로젝트의 후속 연구로 제안했던 '최적의 PID 파라미터를 찾아가는 AI'가 강화학습의 좋은 예시가 될 수 있습니다.</p>
+                    </div>
+
+                    <p class="question">과적합(Overfitting)이 무엇이며, 이를 해결하기 위한 방법에는 어떤 것들이 있을까요?</p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p><strong>과적합</strong>은 모델이 학습 데이터에만 너무 치중하여, 마치 시험 범위의 문제만 외운 것처럼 학습 데이터는 잘 맞추지만 실제 새로운 데이터에 대해서는 성능이 떨어지는 현상을 말합니다. 저 역시 스마트 분리수거 프로젝트 초기에 깨끗한 이미지로만 학습시켰더니, 실제 구겨진 쓰레기를 잘 인식하지 못하는 과적합을 경험했습니다.</p>
+                        <p>이를 해결하기 위한 방법으로는 첫째, 더 많은 데이터를 모으는 것입니다. 둘째, 제가 사용했던 '데이터 증강' 기법처럼 기존 데이터를 변형하여 데이터의 다양성을 확보하는 방법이 있습니다. 셋째, 딥러닝 모델의 경우 '드롭아웃(Dropout)'을 통해 학습 과정에서 의도적으로 일부 뉴런을 비활성화하여 모델이 특정 뉴런에만 의존하지 않도록 할 수 있습니다. 넷째, 모델의 복잡도를 줄이거나 '규제(Regularization)'를 통해 가중치가 너무 커지지 않도록 제한하는 방법도 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>심화 지식 및 최신 동향</h4>
+                    <p class="question">생활기록부에 sLLM(경량화 모델)에 대해 탐구했다고 나와있는데, 거대언어모델(LLM)에 비해 sLLM이 갖는 장점은 무엇이라고 생각하나요?</p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>네, LLM이 매우 뛰어난 성능을 보이지만, 막대한 컴퓨팅 자원과 비용이 필요하다는 단점이 있습니다. 제가 탐구한 sLLM은 이러한 한계를 극복하기 위해 등장했으며, 크게 세 가지 장점이 있다고 생각합니다. 첫째, '효율성'입니다. 모델 크기가 작아 학습과 추론에 필요한 비용과 에너지가 적습니다. 둘째, '속도'입니다. 빠른 응답 속도가 가능하여 스마트폰이나 노트북 같은 개인 기기에서 직접 AI를 구동하는 '온디바이스 AI'에 매우 적합합니다. 셋째, '맞춤화'입니다. 특정 도메인이나 작업에 맞춰 미세조정(Fine-tuning)하기가 LLM보다 용이하여, 의료나 법률과 같은 전문 분야에서 더 높은 효율을 보일 수 있습니다.</p>
+                    </div>
+
+                    <p class="question">멀티모달 AI가 무엇이며, 이 기술이 우리 삶을 어떻게 바꿀 수 있을지 구체적인 예를 들어 설명해보세요.</p>
+                    <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p><strong>멀티모달 AI</strong>는 저처럼 사람과 같이 텍스트, 이미지, 음성 등 여러 종류의 데이터를 동시에 이해하고 처리하는 인공지능입니다. 이 기술은 인간과 AI의 상호작용을 훨씬 더 자연스럽게 만들 잠재력이 있다고 생각합니다. 예를 들어, 사용자가 스마트폰 카메라로 고장 난 기계를 비추며 "이게 왜 작동하지 않지?"라고 말하면, AI가 이미지와 음성을 함께 분석하여 "전원 케이블이 헐겁게 연결되어 있네요. 다시 꽂아보세요."라고 답변해 줄 수 있습니다. 또한, 교육 분야에서는 시각장애 학생에게 그래프와 도표가 포함된 과학 수업 내용을 음성으로 설명해주거나, 복잡한 수술 과정을 의대생에게 시각 및 음성 자료로 동시에 제공하는 등 정보 접근성을 획기적으로 높여줄 것이라 기대합니다.</p>
+                    </div>
+
+                     <p class="question">최근 가장 인상 깊게 본 AI 관련 뉴스나 기술이 있다면 소개해주세요.</p>
+                     <div class="model-answer">
+                        <strong>모범 답안:</strong>
+                        <p>최근 구글에서 발표한 '프로젝트 아스트라(Project Astra)'의 시연 영상이 매우 인상 깊었습니다. 단순히 질문에 답하는 것을 넘어, 스마트폰 카메라를 통해 실시간으로 주변 환경을 보고, 듣고, 기억하며 사용자와 자연스럽게 대화하는 모습이 제가 상상하던 미래의 AI 비서와 가장 가까웠기 때문입니다. 스피커의 부품이 무엇인지 알려주거나, 책상 위에 놓인 물건들을 이용해 즉석에서 이야기를 만들어내는 등, AI가 단순히 정보를 검색하는 도구가 아니라 인간과 소통하고 창의적인 활동을 함께하는 '파트너'가 될 수 있다는 가능성을 보여주었습니다. 이 기술을 보며, 저 또한 사람들의 일상에 자연스럽게 녹아들어 도움을 주는 인간 중심적인 AI를 개발하고 싶다는 꿈을 더욱 확고히 하게 되었습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-final" class="tab-content">
+            <div class="section">
+                <h2>인성 및 최종 준비</h2>
+                <ul>
+                    <li>우리 학과(숙명여대 인공지능학부)에 지원한 동기는 무엇인가요?</li>
+                    <li>AI 분야 중에서도 특히 어떤 분야를 깊게 공부하고 싶나요? (예: 컴퓨터 비전, 자연어 처리, AI 윤리, 강화학습 등)</li>
+                    <li>자신의 장점과 단점을 AI 개발자의 역량과 관련지어 말해보세요.</li>
+                    <li>고등학교 재학 중 가장 힘들었던 경험은 무엇이고, 어떻게 극복했나요?</li>
+                    <li>대학 입학 후 학업 계획과 졸업 후 진로 계획에 대해 말해주세요.</li>
+                    <li><strong>(매우 중요) 마지막으로 하고 싶은 말이 있나요?</strong></li>
+                </ul>
+                <div class="model-answer">
+                    <strong>마지막 할 말을 준비하세요:</strong> 이 질문은 필수적으로 나옵니다. 단순히 "감사합니다"로 끝내지 마세요. 본인의 강점과 AI에 대한 열정을 다시 한번 요약하여 어필할 마지막 기회입니다.<br>
+                    <strong>예시:</strong> "저는 고등학교 3년간 자율주행, AI 윤리, 스마트팩토리 등 다양한 프로젝트를 통해 인공지능이 세상을 바꿀 수 있다는 확신을 갖게 되었습니다. 특히 수학과 과학의 원리를 코드로 구현하며 복잡한 문제를 해결할 때 가장 큰 즐거움을 느꼈습니다. 숙명여대 인공지능학부의 체계적인 커리큘럼과 산업 연계 프로젝트 속에서 저의 탐구 역량을 더욱 발전시켜, 단순한 기술자를 넘어 사회에 긍정적인 영향을 미치는 AI 전문가로 성장하고 싶습니다. 저의 열정과 잠재력을 믿고 기회를 주시면 감사하겠습니다."
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <p>면접은 정답을 맞히는 시험이 아니라, <strong>자신이 얼마나 이 전공에 적합하고 열정적인 인재인지 보여주는 대화</strong>입니다.<br>
+            자신감을 가지고, 자신의 경험과 생각을 진솔하게 이야기한다면 분명 좋은 결과가 있을 것입니다. 행운을 빕니다!</p>
+        </div>
+    </div>
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tabbuttons;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tabbuttons = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tabbuttons.length; i++) {
+    tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Set default tab
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tab-button').click();
+});
+</script>
+</body>
+</html>
