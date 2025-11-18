@@ -439,6 +439,7 @@
             <button class="tab-button" onclick="openTab(event, 'tab-final')">최종 준비</button>
             <button class="tab-button" onclick="openTab(event, 'tab-star')">STAR 대응법</button>
             <button class="tab-button" onclick="openTab(event, 'tab-price')">PRICE 답변 공식</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-terms')">용어 사전</button>
         </div>
 
         <div id="tab-dept-info" class="tab-content active">
@@ -1259,6 +1260,221 @@
                         <strong>I (사례):</strong> "스마트 분리수거 프로젝트에서 인터넷 연결 문제로 성능 저하를 경험했으며, 이를 해결하기 위해 경량화 모델(sLLM) 탐구를 시작했습니다. 특히 모바일 환경에서 실시간으로 작동하는 AI의 가능성을 확인했습니다."<br><br>
                         <strong>C (성장):</strong> "이 경험을 통해 기술의 효율성과 실용성에 대한 중요성을 깨닫고, 클라우드 중심의 개발에서 벗어나 다양한 환경에 적응하는 사고방식을 갖추게 되었습니다."<br><br>
                         <strong>E (비전):</strong> "숙명여대에서 모바일 프로그래밍과 임베디드 시스템 과목을 수강하여, 개인정보는 사용자 기기에 두면서도 강력한 AI 기능을 제공하는 차세대 애플리케이션을 개발하는 전문가로 성장하고 싶습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-terms" class="tab-content">
+            <div class="section">
+                <h2>AI 용어 사전</h2>
+                <p>면접에서 언급된 전문용어들을 쉽게 이해할 수 있도록 친절하게 설명해 드립니다. 각 용어의 기본 개념부터 실제 활용 사례까지 체계적으로 정리했습니다.</p>
+
+                <div class="question-card">
+                    <h4>🔧 기계 학습 / 딥러닝 관련</h4>
+
+                    <h5>📚 티처블 머신 (Teachable Machine)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 구글에서 만든 초보자용 AI 학습 도구로, 코딩 없이 이미지, 소리, 움직임을 분류하는 AI 모델을 만들 수 있습니다.</p>
+                        <p><strong>비유:</strong> AI를 가르치는 '미술 학습지' 같은 것입니다. 아이들에게 동물 그림을 보여주며 "이건 사자", "이건 호랑이"라고 가르치듯, 컴퓨터에게 이미지를 보여주며 분류를 가르칩니다.</p>
+                        <p><strong>작동 방식:</strong></p>
+                        <ul>
+                            <li>카메라로 사진을 찍거나 이미지를 업로드</li>
+                            <li>각 이미지에 '플라스틱', '유리', '캔'처럼 레이블 지정</li>
+                            <li>AI가 자동으로 학습하여 분류 모델 생성</li>
+                            <li>실시간으로 새로운 이미지 분류 가능</li>
+                        </ul>
+                        <p><strong>활용 사례:</strong> 생활기록부의 '스마트 분리수거 프로그램'에서 쓰레기 종류를 분류하는 모델을 만들 때 사용했습니다.</p>
+                    </div>
+
+                    <h5>🎯 데이터 증강 (Data Augmentation)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 적은 양의 데이터를 가지고 더 많은 데이터처럼 만들어주는 기술입니다.</p>
+                        <p><strong>비유:</strong> 한 장의 사진을 '사진 편집 앱'으로 여러 버전으로 만드는 것과 같습니다. 좌우로 뒤집고, 회전하고, 밝기를 조절해서 여러 장처럼 보이게 하는 기술입니다.</p>
+                        <p><strong>주요 기법:</strong></p>
+                        <ul>
+                            <li><strong>좌우 반전:</strong> 이미지를 거울처럼 뒤집기</li>
+                            <li><strong>회전:</strong> 이미지를 각도 돌리기</li>
+                            <li><strong>밝기 조절:</strong> 이미지를 밝거나 어둡게 만들기</li>
+                            <li><strong>확대/축소:</strong> 이미지를 확대하거나 축소하기</li>
+                        </ul>
+                        <p><strong>왜 필요한가:</strong> AI 모델이 깨끗한 이미지만 보고 학습하면, 실제 현실의 구겨지거나 기울어진 쓰레기는 인식하지 못하는 '과적합' 문제가 발생합니다. 데이터 증강을 통해 다양한 상황에 대비할 수 있습니다.</p>
+                    </div>
+
+                    <h5>🧠 과적합 (Overfitting)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> AI가 학습 데이터에만 너무 익숙해져서 새로운 데이터를 잘 처리하지 못하는 현상입니다.</p>
+                        <p><strong>비유:</strong> 시험 범위의 문제만 달달 외운 학생이 실제 시험에서 응용 문제를 틀리는 것과 같습니다. 교과서 예제는 완벽하게 풀지만, 약간 다른 문제가 나오면 해결하지 못하는 상태입니다.</p>
+                        <p><strong>발생 원인:</strong></p>
+                        <ul>
+                            <li>학습 데이터가 너무 적을 때</li>
+                            <li>AI 모델이 너무 복잡할 때</li>
+                            <li>데이터의 다양성이 부족할 때</li>
+                        </ul>
+                        <p><strong>해결 방법:</strong></p>
+                        <ul>
+                            <li>데이터 증강으로 데이터 다양성 확보</li>
+                            <li>모델 단순화 (드롭아웃 등)</li>
+                            <li>더 많은 데이터 수집</li>
+                        </ul>
+                    </div>
+
+                    <h5>📱 경량화 모델 (sLLM - Small Language Model)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 거대언어모델(LLM)을 작고 가볍게 만든 버전으로, 적은 컴퓨터 자원으로도 작동할 수 있습니다.</p>
+                        <p><strong>비유:</strong> 거대 백과사전 전체(LLM)와 휴대용 요약본(sLLM)의 관계와 같습니다. 휴대용은 전체 내용을 다 담지는 못하지만, 핵심 정보를 빠르고 가볍게 찾아볼 수 있습니다.</p>
+                        <p><strong>장점:</strong></p>
+                        <ul>
+                            <li><strong>속도:</strong> 더 빠른 응답 속도</li>
+                            <li><strong>효율성:</strong> 적은 전력과 컴퓨팅 자원 사용</li>
+                            <li><strong>개인정보 보호:</strong> 서버 없이 개인 기기에서 작동 가능</li>
+                            <li><strong>맞춤화:</strong> 특정 분야에 쉽게 최적화 가능</li>
+                        </ul>
+                        <p><strong>활용 분야:</strong> 스마트폰 앱, 스마트 스피커, 자동차 내비게이션 등 개인 기기에서 실시간으로 작동하는 AI에 사용됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>🎮 제어 시스템 관련</h4>
+
+                    <h5>🔄 PID 제어 (PID Control)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 자율주행차나 로봇이 목표 값을 정확하게 따라가도록 제어하는 가장 기본적인 제어 방법입니다.</p>
+                        <p><strong>비유:</strong> 자동차를 일정한 속도로 유지하는 '크루즈 컨트롤'과 같습니다. 속도가 느리면 엑셀을 밟고(P), 너무 빠르면 브레이크를 밟으며(D), 지속적인 속도 차이를 보정합니다(I).</p>
+                        <p><strong>PID 각 요소의 의미:</strong></p>
+                        <ul>
+                            <li><strong>P (Proportional - 비례):</strong> 현재 오차에 비례하는 제어</li>
+                            <li>• 비유: 목표에서 10m 벗어나면 10만큼 조향</li>
+                            <li><strong>I (Integral - 적분):</strong> 과거 오차의 누적을 보상하는 제어</li>
+                            <li>• 비유: 계속 오른쪽으로 치우치면 왼쪽으로 더 조향</li>
+                            <li><strong>D (Derivative - 미분):</strong> 오차의 변화율을 예측하는 제어</li>
+                            <li>• 비유: 너무 빨리 접근하면 속도를 미리 줄임</li>
+                        </ul>
+                        <p><strong>실제 적용:</strong> 자율주행차의 차선 유지, 드론의 자세 제어, 공장 로봇 팔의 정밀 제어 등에 사용됩니다.</p>
+                    </div>
+
+                    <h5>📈 오버슈팅 (Overshooting)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 목표 지점을 지나쳐 버리는 현상으로, PID 제어에서 흔히 발생하는 문제입니다.</p>
+                        <p><strong>비유:</strong> 엘리베이터를 타고 5층으로 가는데, 너무 빨리 가다가 5층을 지나쳐서 6층까지 갔다가 다시 내려오는 것과 같습니다.</p>
+                        <p><strong>자율주행차의 경우:</strong></p>
+                        <ul>
+                            <li>차선 중앙으로 가려다 중앙선을 지나쳐 반대 차선으로 치우침</li>
+                            <li>이후 반대로 보정하며 다시 원래 차선으로 돌아옴</li>
+                            <li>결과: 좌우로 흔들리는 '진동 현상' 발생</li>
+                        </ul>
+                        <p><strong>해결 방법:</strong></p>
+                        <ul>
+                            <li>PID 파라미터 최적화 (특히 D값 조절)</li>
+                            <li>적절한 손실 함수 설계</li>
+                            <li>Min-Max 정규화로 제어 값 안정화</li>
+                        </ul>
+                    </div>
+
+                    <h5>🎯 손실 함수 (Loss Function)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> AI가 얼마나 잘하고 있는지(또는 못하고 있는지)를 수치로 나타내는 함수입니다.</p>
+                        <p><strong>비유:</strong> 학생의 시험 점수와 같습니다. 점수가 낮을수록(손실이 클수록) 더 공부해야 하고, 점수가 높을수록(손실이 작을수록) 잘하고 있는 것입니다.</p>
+                        <p><strong>역할:</strong></p>
+                        <ul>
+                            <li>AI 모델의 성능을 측정하는 척도</li>
+                            <li>학습 방향을 결정하는 가이드</li>
+                            <li>파라미터 최적화의 목표 함수</li>
+                        </ul>
+                        <p><strong>생활기록부 예시:</strong> 자율주행 프로젝트에서는 '오버슈팅'과 '안정성'을 동시에 고려한 복합적인 손실 함수를 설계했습니다.</p>
+                    </div>
+
+                    <h5>⚖️ Min-Max 정규화</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 서로 다른 단위의 데이터를 0에서 1 사이의 동일한 척도로 변환하는 기술입니다.</p>
+                        <p><strong>비유:</strong> 키(180cm)와 몸무게(75kg)를 직접 비교할 수 없듯이, 두 데이터를 0-100점 척도로 변환해서 비교하는 것과 같습니다.</p>
+                        <p><strong>계산 방법:</strong></p>
+                        <ul>
+                            <li>데이터에서 최솟값을 빼기</li>
+                            <li>최댓값에서 최솟값을 뺀 값으로 나누기</li>
+                            <li>결과: 모든 값이 0과 1 사이로 변환</li>
+                        </ul>
+                        <p><strong>활용 이유:</strong> 자율주행 프로젝트에서는 '오버슈팅'과 '정상 상태 오차'의 단위가 달랐기 때문에, Min-Max 정규화로 두 값을 같은 중요도로 비교하고 최적화했습니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>🌐 최신 AI 기술 관련</h4>
+
+                    <h5>📱 온디바이스 AI (On-Device AI / Edge AI)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 인터넷 서버가 아닌, 스마트폰이나 개인 기기에서 직접 작동하는 AI 기술입니다.</p>
+                        <p><strong>비유:</strong> 모든 계산을 서버 컴퓨터에 의존하는 '클라우드 AI'는 모든 질문을 구글에 검색하는 것과 같고, '온디바이스 AI'는 내 머릿속으로 바로 답을 생각하는 것과 같습니다.</p>
+                        <p><strong>장점:</strong></p>
+                        <ul>
+                            <li><strong>속도:</strong> 인터넷 지연 없이 즉각적인 응답</li>
+                            <li><strong>개인정보 보호:</strong> 데이터가 기기를 벗어나지 않음</li>
+                            <li><strong>오프라인 작동:</strong> 인터넷 연결 없이도 가능</li>
+                            <li><strong>비용 절감:</strong> 서버 비용이 필요 없음</li>
+                        </ul>
+                        <p><strong>실제 예시:</strong></p>
+                        <ul>
+                            <li>스마트폰의 얼굴 인식 잠금 해제</li>
+                            <li>사진 앱의 자동 태그 기능</li>
+                            <li>음성 비서의 오프라인 명령어 인식</li>
+                            <li>자율주행차의 실시간 장애물 탐지</li>
+                        </ul>
+                    </div>
+
+                    <h5>🔄 전이학습 (Transfer Learning)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 이미 학습된 AI 모델의 지식을 새로운 문제에 활용하는 기술입니다.</p>
+                        <p><strong>비유:</strong> 자전거를 배운 사람이 오토바이를 더 쉽게 배우는 것과 같습니다. 균형 감각이라는 기본 기능이 이미 있기 때문에 새로운 운전 기술을 더 빨리 익힐 수 있습니다.</p>
+                        <p><strong>작동 원리:</strong></p>
+                        <ul>
+                            <li>대규모 데이터로 미리 학습된 모델 사용 (예: ImageNet)</li>
+                            <li>이 모델의 마지막 레이어만 새로운 데이터에 맞게 수정</li>
+                            <li>적은 데이터로도 높은 성능 달성</li>
+                        </ul>
+                        <p><strong>장점:</strong> 데이터가 부족한 소규모 프로젝트나 특수 분야에서도 AI를 효과적으로 적용할 수 있습니다.</p>
+                    </div>
+
+                    <h5>🤖 연동형 학습 (Federated Learning)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 데이터를 중앙 서버로 모으지 않고, 각 기기에서 개별적으로 학습한 후 결과만 합치는 방식입니다.</p>
+                        <p><strong>비유:</strong> 각 학교에서 학생들이 공부하고, 시험 결과만 교육청에 보내서 전체 교육 방향을 정하는 것과 같습니다. 학생들의 개인 정보는 각 학교에 보호된 채로 유지됩니다.</p>
+                        <p><strong>핵심 가치:</strong> 개인정보 보호</p>
+                        <ul>
+                            <li>원본 데이터는 기기에 그대로 보관</li>
+                            <li>학습된 모델 파라미터만 공유</li>
+                            <li>의료, 금융 등 민감 데이터 처리에 적합</li>
+                        </ul>
+                        <p><strong>활용 사례:</strong> 스마트폰 키보드의 예측 기능, 병원 간 AI 진단 모델 개발 등에서 사용됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>💡 팁 & 기타</h4>
+
+                    <h5>🔗 도메인 지식 (Domain Knowledge)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> 특정 분야에 대한 깊은 이해와 전문성을 의미합니다.</p>
+                        <p><strong>비유:</strong> AI 개발자라는 '요리사'가 있을 때, 의료 AI를 만들려면 '의학'이라는 '레시피'를 알아야 합니다. 의학 지식이 없는 요리사는 좋은 의료 AI를 만들 수 없습니다.</p>
+                        <p><strong>중요성:</strong></p>
+                        <ul>
+                            <li>해당 분야의 문제를 정확히 이해</li>
+                            <li>적절한 데이터 수집과 전처리 가능</li>
+                            <li>실제 사용자가 필요하는 기능 개발</li>
+                        </ul>
+                        <p><strong>AI 개발자에게 필요한 이유:</strong> 단순히 코딩만 잘해서는 좋은 AI를 만들 수 없고, AI가 적용될 분야에 대한 깊은 이해가 필요합니다.</p>
+                    </div>
+
+                    <h5>📊 경사 하강법 (Gradient Descent)</h5>
+                    <div class="model-answer">
+                        <p><strong>쉬운 설명:</strong> AI가 최적의 답을 찾아가는 가장 기본적인 최적화 방법입니다.</p>
+                        <p><strong>비유:</strong> 안개가 낀 산에서 가장 낮은 곳(최적의 답)을 찾아 내려가는 것과 같습니다. 현재 위치에서 어떤 방향이 아래인지 확인한 후, 한 걸음 내려가고, 다시 방향을 확인하고 또 내려가는 과정을 반복합니다.</p>
+                        <p><strong>작동 과정:</strong></p>
+                        <ul>
+                            <li>현재 위치에서의 기울기(경사) 계산</li>
+                            <li>가장 가파른 아래 방향으로 한 걸음 이동</li>
+                            <li>이 과정을 반복하여 최저점 도달</li>
+                        </ul>
+                        <p><strong>AI 학습에서의 역할:</strong> 손실 함수의 값을 최소화하는 최적의 파라미터를 찾는 데 사용되는 핵심 알고리즘입니다.</p>
                     </div>
                 </div>
             </div>
