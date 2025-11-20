@@ -439,6 +439,7 @@
             <button class="tab-button" onclick="openTab(event, 'tab-final')">최종 준비</button>
             <button class="tab-button" onclick="openTab(event, 'tab-star')">STAR 대응법</button>
             <button class="tab-button" onclick="openTab(event, 'tab-price')">PRICE 답변 공식</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-checklist')">최종 체크리스트</button>
             <button class="tab-button" onclick="openTab(event, 'tab-terms')">용어 사전</button>
         </div>
 
@@ -1477,6 +1478,110 @@
                         <p><strong>AI 학습에서의 역할:</strong> 손실 함수의 값을 최소화하는 최적의 파라미터를 찾는 데 사용되는 핵심 알고리즘입니다.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="tab-checklist" class="tab-content">
+            <div class="section">
+                <h2>면접 최종 체크리스트</h2>
+                <p>면접 이틀 전, 최종적으로 점검해야 할 사항들을 정리했습니다. 각 항목을 꼼꼼히 확인하고, 접혀있는 상세 내용을 펼쳐보며 마지막 준비를 완벽하게 마치세요.</p>
+                
+                <div class="question-card">
+                    <h4>✅ D-Day 준비물 체크</h4>
+                    <label><input type="checkbox"> 신분증 (주민등록증, 운전면허증, 여권 등)</label><br>
+                    <label><input type="checkbox"> 수험표 (깨끗하게 출력)</label><br>
+                    <label><input type="checkbox"> 단정한 복장 (교복 또는 정장, 미리 다림질)</label><br>
+                    <label><input type="checkbox"> 필기도구 및 작은 수첩</label><br>
+                    <label><input type="checkbox"> 아날로그 손목시계 (선택)</label><br>
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>❗️ 준비물 상세 내용 및 유의사항</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>신분증/수험표:</strong> 가장 중요합니다. 미리 가방에 넣어두세요. 분실에 대비해 사본을 찍어두거나, 정부24 앱 등을 활용하는 것도 좋습니다.</p>
+                            <p><strong>복장:</strong> 너무 튀지 않는 단정한 옷차림이 좋습니다. 교복을 입는다면 깨끗하게 세탁하고, 정장을 입는다면 구김이 없도록 미리 준비합니다. 새 옷이나 새 신발은 불편할 수 있으니 익숙한 것으로 착용하는 것을 추천합니다.</p>
+                            <p><strong>전자기기:</strong> 스마트워치, 스마트폰, 태블릿 등 모든 전자기기는 면접장 입실 전에 전원을 꺼야 합니다. 알람이 울리지 않도록 반드시 확인하세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>✅ 마인드 컨트롤</h4>
+                    <label><input type="checkbox"> 긍정적인 자기 암시 ("나는 할 수 있다!")</label><br>
+                    <label><input type="checkbox"> 충분한 수면 (최소 7시간 이상)</label><br>
+                    <label><input type="checkbox"> 면접 시뮬레이션 (머릿속으로 동선 그려보기)</label><br>
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>💆‍♀️ 긴장 완화 및 자신감 상승 팁</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>"면접은 나를 평가하는 자리가 아니라, 나와 학교가 서로를 알아가는 자리다"</strong>라고 생각해보세요. 내가 이 학교와 잘 맞는지 확인하러 간다고 생각하면 부담이 줄어듭니다.</p>
+                            <p><strong>심호흡:</strong> 너무 긴장될 때는 잠시 눈을 감고, 코로 4초간 숨을 들이마시고, 4초간 참고, 입으로 6초간 천천히 내쉬는 복식 호흡을 해보세요. 심박수가 안정되며 긴장이 완화됩니다.</p>
+                            <p><strong>성공 경험 떠올리기:</strong> 고등학교 생활 중 무언가를 성공적으로 해냈던 경험(프로젝트 완성, 성적 향상 등)을 떠올리며 자신감을 되찾으세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>✅ 답변 최종 점검</h4>
+                    <label><input type="checkbox"> 1분 자기소개 (완벽 암기 및 자연스럽게 말하기 연습)</label><br>
+                    <label><input type="checkbox"> 마지막 할 말 (진심을 담아, 열정을 어필)</label><br>
+                    <label><input type="checkbox"> 지원 동기 (학과 인재상과 나의 강점 연결)</label><br>
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>🎙 1분 자기소개 및 마지막 할 말 예시</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>1분 자기소개 예시:</strong><br>
+                            "안녕하십니까, 기술로 세상의 문제를 해결하는 따뜻한 AI 개발자를 꿈꾸는 지원자 OOO입니다. 저는 고등학교 3년간 AI의 무한한 가능성을 탐구하며, 특히 자율주행 알고리즘과 스마트 분리수거 시스템을 직접 설계하며 이론을 현실로 만드는 즐거움을 깨달았습니다. 복잡한 수학 원리를 코드로 구현하고, 데이터 속에서 의미를 찾아내 문제를 해결하는 과정은 저에게 큰 성취감을 주었습니다. 이제 숙명여대 인공지능학부의 체계적인 커리큘럼 속에서 저의 잠재력을 폭발시켜, 사람을 먼저 생각하는 AI 전문가로 성장하고 싶습니다. 저의 열정과 가능성을 믿고 지켜봐 주시면 감사하겠습니다."</p>
+                            <p><strong>마지막 할 말 예시:</strong><br>
+                            "오늘 면접을 통해 제가 지난 3년간 품어온 AI에 대한 열정과 비전을 보여드릴 수 있어 기뻤습니다. 저는 단순히 지식을 쌓는 것을 넘어, 제가 배운 기술로 사회에 어떤 기여를 할 수 있을지 항상 고민하는 학생이었습니다. 만약 숙명여대 인공지능학부에 입학할 기회가 주어진다면, 선배님 및 동기들과 적극적으로 교류하며 함께 성장하고, 주어진 커리큘럼 외에도 능동적으로 새로운 기술을 탐구하여 빛나는 인재가 되겠습니다. 귀교와 함께 성장할 기회를 꼭 잡고 싶습니다. 감사합니다."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>✅ 전공 핵심 질문 최종 점검</h4>
+                    <label><input type="checkbox"> AI, 머신러닝, 딥러닝 차이 설명 가능</label><br>
+                    <label><input type="checkbox"> 지도/비지도/강화학습 예시 들어 설명 가능</label><br>
+                    <label><input type="checkbox"> 과적합(Overfitting) 원인과 해결 방안 설명 가능</label><br>
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>🧠 전공 핵심 개념 다시보기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>AI > 머신러닝 > 딥러닝:</strong> AI는 인간 지능 모방 기술 전체, 머신러닝은 데이터 기반 학습, 딥러닝은 인공신경망 기반 머신러닝.</p>
+                            <p><strong>지도학습:</strong> 정답(Label) 있는 데이터로 학습 (예: 스팸메일 분류).<br> <strong>비지도학습:</strong> 정답 없는 데이터에서 패턴 찾기 (예: 고객 그룹핑).<br> <strong>강화학습:</strong> 보상을 통해 최적 행동 학습 (예: 알파고).</p>
+                            <p><strong>과적합:</strong> 학습 데이터에만 과하게 최적화되어 새 데이터에 대한 성능이 낮은 현상.<br>
+                            <strong>해결방안:</strong> 데이터 증강, 드롭아웃, 규제(Regularization), 더 많은 데이터 확보 등.</p>
+                            <p>※ 'AI 전공 질문' 탭에서 다른 질문들도 다시 한번 확인해보세요!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>✅ 숙명여대 및 학과 정보 최종 확인</h4>
+                    <label><input type="checkbox"> 숙명여대 인재상(미래 가치를 만드는 창의융합 인재) 숙지</label><br>
+                    <label><input type="checkbox"> 인공지능공학부 교육 목표 및 커리큘럼 숙지</label><br>
+                    <label><input type="checkbox"> 면접 장소 및 시간, 교통편 재확인</label><br>
+                    <div class="answer-toggle" onclick="toggleAnswer(this)">
+                        <div class="answer-header">
+                            <span>🔗 관련 정보 바로가기</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="answer-content">
+                            <p><strong>숙명여자대학교 입학처:</strong> <a href="http://admission.sookmyung.ac.kr" target="_blank">http://admission.sookmyung.ac.kr</a></p>
+                            <p><strong>인공지능공학부 홈페이지:</strong> (학과 홈페이지 주소를 확인하여 추가하세요.)</p>
+                            <p><strong>면접 요강:</strong> 입학처 홈페이지에서 수시모집요강을 다시 한번 다운로드하여 본인의 전형, 면접 시간, 장소, 유의사항을 최종 확인하세요.</p>
+                            <p><strong>교통편:</strong> 지각은 절대 금물입니다. 대중교통 이용 시, 예상 소요시간보다 30분~1시간 정도 여유를 두고 출발 계획을 세우세요. 비상 상황에 대비한 대체 경로도 파악해두면 좋습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
