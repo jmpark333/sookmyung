@@ -432,7 +432,8 @@
         <h1>숙명여대 인공지능학부 면접 완벽 대비</h1>
         
         <div class="tab-menu">
-            <button class="tab-button active" onclick="openTab(event, 'tab-dept-info')">학과 정보</button>
+            <button class="tab-button active" onclick="openTab(event, 'tab-vision')">숙명여대 비전</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-dept-info')">학과 정보</button>
             <button class="tab-button" onclick="openTab(event, 'tab-dept-fit')">학과 맞춤 질문</button>
             <button class="tab-button" onclick="openTab(event, 'tab-record')">생기부 기반 질문</button>
             <button class="tab-button" onclick="openTab(event, 'tab-major')">AI 전공 질문</button>
@@ -443,7 +444,22 @@
             <button class="tab-button" onclick="openTab(event, 'tab-terms')">용어 사전</button>
         </div>
 
-        <div id="tab-dept-info" class="tab-content active">
+        <div id="tab-vision" class="tab-content active">
+            <div class="section">
+                <h2>숙명여대 비전</h2>
+                
+                <div class="question-card">
+                    <h4>숙명여자대학교 2025 비전</h4>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="2025_vision01.png" alt="숙명여대 2025 비전" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <p>숙명여자대학교는 미래 사회를 이끌어갈 여성 리더를 양성하기 위해 혁신적인 교육과 연구에 힘쓰고 있습니다. 2025년 비전은 지식 기반 사회에서 요구하는 창의적이고 융합적인 인재를 양성하는 것을 목표로 합니다.</p>
+                    <p>인공지능공학부는 이러한 숙명여대의 비전을 실현하는 핵심적인 역할을 하며, 학생들에게 최신 AI 기술과 인간 중심적 가치를 결합한 교육을 제공하고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-dept-info" class="tab-content">
             <div class="section">
                 <h2>숙명여대 인공지능공학부 알아보기</h2>
                 
@@ -1696,7 +1712,11 @@ function toggleAnswer(element) {
 
 // Set default tab
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector('.tab-button').click();
+    // '숙명여대 비전' 탭을 기본으로 설정
+    var firstTab = document.querySelector('.tab-button');
+    if (firstTab) {
+        firstTab.click();
+    }
 });
 </script>
 </body>
